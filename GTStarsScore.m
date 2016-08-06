@@ -1,14 +1,8 @@
-//
-//  GTStarsScore.m
-//  OCComponent_master
-//
-//  Created by 赵国腾 on 16/5/26.
-//  Copyright © 2016年 赵国腾. All rights reserved.
-//
+
 
 #import "GTStarsScore.h"
 #import "UIView+Extention.h"
-
+#import "FeedBackViewController.h"
 const NSInteger kStarCount = 5;
 
 @interface GTStarsScore ()
@@ -42,7 +36,7 @@ const NSInteger kStarCount = 5;
 
 - (void)awakeFromNib {
     self.tempFrame = self.frame;
-
+    
     [self setUp];
 }
 
@@ -54,7 +48,7 @@ const NSInteger kStarCount = 5;
 
 - (void)setUp {
     
-//    self.backgroundColor = [UIColor clearColor];
+    //    self.backgroundColor = [UIColor clearColor];
     
     self.grayView = [[UIView alloc] initWithFrame:CGRectZero];
     self.yellowView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -64,11 +58,11 @@ const NSInteger kStarCount = 5;
     
     UIImage *starGrayImage = [UIImage imageNamed:@"star_gray"];
     UIImage *starYellowImage = [UIImage imageNamed:@"star_yellow"];
-
+    
     // 设置视图view为图片大小的5
     self.gt_height = starGrayImage.size.height;
     self.gt_width = starGrayImage.size.width * kStarCount;
-
+    
     self.grayView.backgroundColor = [UIColor clearColor];
     self.grayView.backgroundColor = [UIColor colorWithPatternImage:starGrayImage];
     
@@ -95,7 +89,7 @@ const NSInteger kStarCount = 5;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
     [self addGestureRecognizer:tap];
-
+    
 }
 
 - (void)tap:(UITapGestureRecognizer *)tap {
@@ -105,8 +99,9 @@ const NSInteger kStarCount = 5;
     [self changeYellowView:point];
     
     if ([self.delegate respondsToSelector:@selector(starsScore:valueChange:)]) {
-        CGFloat value = self.yellowView.gt_width / self.gt_width * self.scale;
-        [self.delegate starsScore:self valueChange:round(value * 100) / 100.0];
+        self.value= self.yellowView.gt_width / self.gt_width * self.scale;
+        [self.delegate starsScore:self valueChange:round(self.value * 100) / 100.0];
+        
     }
 }
 
@@ -119,8 +114,9 @@ const NSInteger kStarCount = 5;
     if (pan.state == UIGestureRecognizerStateEnded) {
         
         if ([self.delegate respondsToSelector:@selector(starsScore:valueChange:)]) {
-            CGFloat value = self.yellowView.gt_width / self.gt_width * self.scale;
-            [self.delegate starsScore:self valueChange:round(value * 100) / 100.0];
+            self.value = self.yellowView.gt_width / self.gt_width * self.scale;
+            [self.delegate starsScore:self valueChange:round(self.value * 100) / 100.0];
+            
         }
     }
 }
@@ -130,7 +126,7 @@ const NSInteger kStarCount = 5;
     if (CGRectContainsPoint(self.bounds, point)) {
         
         [UIView animateWithDuration:0.15 animations:^{
-           
+            
             self.yellowView.gt_width = point.x;
         }];
     }

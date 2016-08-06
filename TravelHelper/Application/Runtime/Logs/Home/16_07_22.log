@@ -1,0 +1,910 @@
+[ 2016-07-22T09:16:13+08:00 ] 127.0.0.1 /TravelHelper/Home/User/getUserDetailedInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000695s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000646s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000690s ]
+
+[ 2016-07-22T09:16:51+08:00 ] 127.0.0.1 /TravelHelper/Home/User/getUserDetailedInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000548s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000621s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000662s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000444s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000477s ]
+
+[ 2016-07-22T09:17:01+08:00 ] 127.0.0.1 /TravelHelper/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000325s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000428s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000458s ]
+
+[ 2016-07-22T11:27:40+08:00 ] 127.0.0.1 /TravelHelper/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000639s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000796s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000833s ]
+
+[ 2016-07-22T11:42:49+08:00 ] 127.0.0.1 /TravelHelper/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000456s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000513s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000561s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000628s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000673s ]
+
+[ 2016-07-22T15:05:15+08:00 ] 127.0.0.1 /TravelHelper/Home/User/getUserInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000835s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000886s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000742s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000771s ]
+
+[ 2016-07-22T15:07:36+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005491s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000401s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000714s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000758s ]
+
+[ 2016-07-22T15:11:34+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000328s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0044s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000553s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000668s ]
+
+[ 2016-07-22T15:13:32+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000624s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000489s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000527s ]
+
+[ 2016-07-22T15:15:57+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000567s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000601s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000648s ]
+
+[ 2016-07-22T15:18:40+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000307s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000777s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000825s ]
+
+[ 2016-07-22T15:18:44+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000296s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000517s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000391s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000415s ]
+
+[ 2016-07-22T15:19:21+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000377s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000658s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000733s ]
+
+[ 2016-07-22T15:21:39+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000346s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000837s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000887s ]
+
+[ 2016-07-22T15:21:57+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000273s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000393s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000711s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000770s ]
+
+[ 2016-07-22T15:23:54+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000360s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000698s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000746s ]
+
+[ 2016-07-22T15:26:15+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000428s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000470s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000623s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000681s ]
+
+[ 2016-07-22T15:26:51+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000442s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000494s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000660s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000711s ]
+
+[ 2016-07-22T15:28:17+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000610s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000627s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000568s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000611s ]
+
+[ 2016-07-22T15:28:30+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000305s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000403s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000470s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000750s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000793s ]
+
+[ 2016-07-22T15:32:10+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001102s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000637s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000687s ]
+
+[ 2016-07-22T15:34:29+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000265s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000513s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000764s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000852s ]
+
+[ 2016-07-22T15:34:43+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000385s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000698s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000753s ]
+
+[ 2016-07-22T15:36:51+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000350s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000450s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000504s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000704s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000848s ]
+
+[ 2016-07-22T15:37:34+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000484s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000428s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000455s ]
+
+[ 2016-07-22T15:40:10+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000263s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000459s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000498s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000558s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000625s ]
+
+[ 2016-07-22T15:57:55+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000259s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0026s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000476s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000517s ]
+
+[ 2016-07-22T15:58:43+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000466s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000764s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000845s ]
+
+[ 2016-07-22T16:14:55+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000733s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000467s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000502s ]
+
+[ 2016-07-22T16:15:17+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000326s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000471s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000585s ]
+
+[ 2016-07-22T16:16:40+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000239s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000284s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000310s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000752s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000799s ]
+
+[ 2016-07-22T16:16:46+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/upload/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000535s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `user_detailedinfo` (`user_id`,`user_photo`,`user_nickname`,`user_sex`,`user_birth`,`user_district`,`user_signature`) VALUES ('7777','photo','哈啊','男','1998-04-09','中国 天津','haha') [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000446s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000489s ]
+
+[ 2016-07-22T16:16:46+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/upload/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000292s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000395s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000438s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `user_detailedinfo` SET `user_photo`='photo',`user_nickname`='哈啊',`user_sex`='男',`user_birth`='1998-04-09',`user_district`='中国 天津',`user_signature`='haha' WHERE `user_id` = '7777' [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000440s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000465s ]
+
+[ 2016-07-22T16:16:47+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/upload/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000203s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000275s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `user_detailedinfo` SET `user_photo`='photo',`user_nickname`='哈啊',`user_sex`='男',`user_birth`='1998-04-09',`user_district`='中国 天津',`user_signature`='haha' WHERE `user_id` = '7777' [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000445s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000474s ]
+
+[ 2016-07-22T16:16:48+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/upload/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000206s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000253s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000277s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `user_detailedinfo` SET `user_photo`='photo',`user_nickname`='哈啊',`user_sex`='男',`user_birth`='1998-04-09',`user_district`='中国 天津',`user_signature`='haha' WHERE `user_id` = '7777' [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000418s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000445s ]
+
+[ 2016-07-22T16:17:00+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/upload/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000270s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000320s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `user_detailedinfo` SET `user_photo`='photo',`user_nickname`='Wde',`user_sex`='男',`user_birth`='1998-04-09',`user_district`='中国 天津',`user_signature`='haha' WHERE `user_id` = '7777' [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000473s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000504s ]
+
+[ 2016-07-22T16:17:00+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/upload/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000211s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000259s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000284s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `user_detailedinfo` SET `user_photo`='photo',`user_nickname`='Wde',`user_sex`='男',`user_birth`='1998-04-09',`user_district`='中国 天津',`user_signature`='haha' WHERE `user_id` = '7777' [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000413s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000441s ]
+
+[ 2016-07-22T16:17:01+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/upload/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000202s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000275s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `user_detailedinfo` SET `user_photo`='photo',`user_nickname`='Wde',`user_sex`='男',`user_birth`='1998-04-09',`user_district`='中国 天津',`user_signature`='haha' WHERE `user_id` = '7777' [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000422s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000448s ]
+
+[ 2016-07-22T16:17:01+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/upload/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000325s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `user_detailedinfo` SET `user_photo`='photo',`user_nickname`='Wde',`user_sex`='男',`user_birth`='1998-04-09',`user_district`='中国 天津',`user_signature`='haha' WHERE `user_id` = '7777' [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000435s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000467s ]
+
+[ 2016-07-22T16:17:01+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/upload/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000245s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000306s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000336s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `user_detailedinfo` SET `user_photo`='photo',`user_nickname`='Wde',`user_sex`='男',`user_birth`='1998-04-09',`user_district`='中国 天津',`user_signature`='haha' WHERE `user_id` = '7777' [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000491s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000528s ]
+
+[ 2016-07-22T16:17:02+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/upload/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000205s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000276s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `user_detailedinfo` SET `user_photo`='photo',`user_nickname`='Wde',`user_sex`='男',`user_birth`='1998-04-09',`user_district`='中国 天津',`user_signature`='haha' WHERE `user_id` = '7777' [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000413s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000439s ]
+
+[ 2016-07-22T16:17:02+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/upload/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000212s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000253s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000277s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `user_detailedinfo` SET `user_photo`='photo',`user_nickname`='Wde',`user_sex`='男',`user_birth`='1998-04-09',`user_district`='中国 天津',`user_signature`='haha' WHERE `user_id` = '7777' [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000428s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000462s ]
+
+[ 2016-07-22T16:28:48+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000313s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000343s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001005s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001104s ]
+
+[ 2016-07-22T16:29:25+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000695s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000705s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000773s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000486s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000731s ]
+
+[ 2016-07-22T16:35:24+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000376s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000650s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000710s ]
+
+[ 2016-07-22T16:35:30+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000559s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000428s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000455s ]
+
+[ 2016-07-22T16:38:30+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000248s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000323s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000593s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000636s ]
+
+[ 2016-07-22T16:38:34+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000227s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000283s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000312s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000587s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000655s ]
+
+[ 2016-07-22T16:39:00+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000306s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000424s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000588s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000631s ]
+
+[ 2016-07-22T16:40:26+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000497s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000589s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000634s ]
+
+[ 2016-07-22T16:42:04+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000350s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000539s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000587s ]
+
+[ 2016-07-22T16:42:08+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000224s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000312s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000341s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000453s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000489s ]
+
+[ 2016-07-22T16:42:37+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000445s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000404s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000431s ]
+
+[ 2016-07-22T16:44:04+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000436s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000466s ]
+
+[ 2016-07-22T16:44:27+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000258s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000370s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000408s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000435s ]
+
+[ 2016-07-22T16:45:11+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000305s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000335s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000617s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000662s ]
+
+[ 2016-07-22T16:45:14+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000224s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000314s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000431s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000457s ]
+
+[ 2016-07-22T17:01:53+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000225s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000278s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000305s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000423s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000453s ]
+
+[ 2016-07-22T17:06:00+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000356s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000410s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000440s ]
+
+[ 2016-07-22T17:08:33+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000529s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000675s ]
+
+[ 2016-07-22T17:16:15+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000532s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000400s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000431s ]
+
+[ 2016-07-22T17:21:08+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000248s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000306s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000338s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000544s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000585s ]
+
+[ 2016-07-22T17:24:10+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000233s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000312s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000416s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000449s ]
+
+[ 2016-07-22T17:25:31+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000204s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000257s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000281s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000446s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000474s ]
+
+[ 2016-07-22T17:32:53+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000652s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000423s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000452s ]
+
+[ 2016-07-22T17:33:07+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000259s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000348s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = '0001' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000447s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000473s ]
+
+[ 2016-07-22T18:18:50+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000680s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000531s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000594s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '0002' LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000641s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000694s ]
+
+[ 2016-07-22T18:19:04+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/upload/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000200s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000272s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `user_detailedinfo` SET `user_photo`='photo',`user_nickname`='Jjj',`user_sex`='男',`user_birth`='1998-04-09',`user_district`='中国 天津',`user_signature`='haha' WHERE `user_id` = '7777' [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000418s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000447s ]
+
+[ 2016-07-22T18:20:39+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/upload/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000278s ]
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `user_detailedinfo` SET `user_photo`='photo',`user_nickname`='Lll',`user_sex`='男',`user_birth`='1998-04-09',`user_district`='中国 天津',`user_signature`='haha' WHERE `user_id` = '7777' [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000442s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000472s ]
+

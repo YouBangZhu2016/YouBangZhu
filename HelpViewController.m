@@ -7,91 +7,80 @@
 //
 
 #import "HelpViewController.h"
-#import "matter.h"
+#import "AFNetworking.h"
+#import "WebAgent.h"
+#import "APIClient.h"
 
-@interface HelpViewController ()<UITabBarDelegate,UITableViewDataSource>
-@property (nonatomic ,strong) UITableView *mainTableView;
-@property (nonatomic ,strong) NSArray *dataArr;
+@interface HelpViewController ()
+-(void)submitClick;
+@property (nonatomic ,strong) UITextField *submitTF;
+
 @end
 
 @implementation HelpViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UILabel *assistAndFreedbackInfoemationLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, 44)];
-    assistAndFreedbackInfoemationLabel.text = @"帮助与反馈";
-    assistAndFreedbackInfoemationLabel.textAlignment = NSTextAlignmentCenter;
-    assistAndFreedbackInfoemationLabel.font = [UIFont systemFontOfSize:23.0];
-    assistAndFreedbackInfoemationLabel.backgroundColor = [UIColor orangeColor];
-    [self.view addSubview:assistAndFreedbackInfoemationLabel];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.title = @"帮助与反馈";
     
     
-    UITextField *search = [[UITextField alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 44)];
-    search.placeholder = @"🔍搜索";
+    self.submitTF = [[UITextField alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 230)];
+    self.submitTF.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:self.submitTF];
     
-    [self.view addSubview:search];
-    
-    
-    UILabel *matterLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 104, self.view.bounds.size.width, 40)];
-    matterLabel.text = @"  热点问题";
-    matterLabel.font = [UIFont systemFontOfSize:23.0];
-    [self.view addSubview:matterLabel];
-    
-    
-    //加载数据源
-    [self loadDataFromWeb];
-    //加载控件
-    self.mainTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 144,self.view.bounds.size.width, self.view.bounds.size.height-64) style:UITableViewStylePlain];
-    self.mainTableView.backgroundColor = [UIColor whiteColor];
-    self.mainTableView.delegate = self;
-    self.mainTableView.dataSource = self;
-    [self.view addSubview:self.mainTableView];
-    
+    UIButton *submitB = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width-85, 300, 75, 30)];
+    submitB.backgroundColor = [UIColor orangeColor];
+    [submitB setTitle:@"提交" forState:UIControlStateNormal];
+    [submitB addTarget:self action:@selector(submitClick) forControlEvents:UIControlEventTouchDown];
+    [self.view addSubview:submitB];
 }
 
-#pragma make - 加载数据源
--(void)loadDataFromWeb{
-    matter *matter1 = [[matter alloc]init];
-    matter1.hotMatter = @"aaaaaaaaaaaaa";
-    matter *matter2 = [[matter alloc]init];
-    matter2.hotMatter = @"bbbbbbbbbbbbbb";
-    matter *matter3 = [[matter alloc]init];
-    matter3.hotMatter = @"cccccccccccccc";
-    
-    self.dataArr = @[matter1,matter2,matter3];
-    
-}
 
-#pragma mark - 表视图协议
-//控制表视图的行数
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.dataArr.count;
-}
-//控制每一行使用什么样式
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *cellIdentifier = @"cellIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        matter *matter = self.dataArr[indexPath.row];
-        cell.textLabel.text = matter.hotMatter;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+-(void)submitClick{
+    if(self.submitTF.text.length == 0){
+        
+        self.submitTF.placeholder = @"反馈信息不能为空";
+        
     }
-    return cell;
-}
-//控制行高
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 44;
-}
-//点击行之后的响应事件
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+    
+    else{
+        //获取时间
+        NSDate *sendDate = [NSDate date];
+        NSDateFormatter *dateForMatter = [[NSDateFormatter alloc]init];
+        [dateForMatter setDateFormat:@"YYYY-MM-dd HH:mm:ss"];
+        NSString *morelocationString = [dateForMatter stringFromDate:sendDate];
+        NSUserDefaults *useriinfo = [NSUserDefaults standardUserDefaults];
+        
+        NSDictionary *user_id = [useriinfo dictionaryForKey:@"user_id"];
+        NSDictionary *otherDic = [useriinfo dictionaryForKey:@"account_state"];
+        
+        
+        if([otherDic[@"user_email"] isEqual:@""]){
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"请绑定邮箱" message:nil delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil];
+            [alertView show];
+        }
+        else{
+            [WebAgent user_id:user_id[@"user_id"] user_feedbackinfo:self.submitTF.text feedbackinfo_time:morelocationString user_phone:otherDic[@"user_phone"] user_email:otherDic[@"user_email"] success:^(id responseObject) {
+                NSData *data = [[NSData alloc]initWithData:responseObject];
+                NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                NSLog(@"%@",dic);
+            } failure:^(NSError *error) {
+                NSLog(@"%@",error);
+            }
+             ];
+        }
+        
+    }
     
 }
+
+
+
+
 
 
 @end
+
+

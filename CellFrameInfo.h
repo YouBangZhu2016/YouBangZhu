@@ -15,7 +15,7 @@
 
 @property (nonatomic , assign) CGRect avaterImageViweFrame;
 @property (nonatomic , assign) CGRect nickNameLabelFrame;
-@property (nonatomic , assign) CGRect gradeLabelFrame;
+@property (nonatomic , assign) CGRect gradeViewFrame;
 @property (nonatomic , assign) CGRect complaintButtonFrame;
 @property (nonatomic , assign) CGFloat cellHeight;
 

@@ -8,12 +8,13 @@
 
 #import "EvaluatePeopleCell.h"
 #import "GTStarsScore.h"
+#import "AFNetworking.h"
+#import "APIClient.h"
+#import "WebAgent.h"
+#import "FeedBackViewController.h"
+#import "complaintViewController.h"
 
 @interface EvaluatePeopleCell ()<GTStarsScoreDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *avaterImageView;
-@property (weak, nonatomic) IBOutlet UILabel *nickNameLable;
-@property (weak, nonatomic) IBOutlet UILabel *gradeLable;
-@property (weak, nonatomic) IBOutlet UIButton *complaintButton;
 
 
 @property (nonatomic , strong) PeoPle *people;
@@ -21,23 +22,27 @@
 @end
 
 @implementation EvaluatePeopleCell
+
+
+
 - (void)starsScore:(GTStarsScore *)starsScore valueChange:(CGFloat)value
 {
-    
 }
 
 - (void)setCellData:(PeoPle *)people
           frameInfo:(CellFrameInfo *)frameInfo
 {
-   GTStarsScore *starsScore_20 = [[GTStarsScore alloc]initWithFrame:CGRectMake(0, 0, 0, 20)];
-    starsScore_20.delegate = self;
+    self.starsScore_20 = [[GTStarsScore alloc]initWithFrame:CGRectMake(3, 5, 0, 20)];
+    self.starsScore_20.delegate = self;
     self.people = people;
     self.frameInfo = frameInfo;
     [self.avaterImageView addSubview:self.people.avaterImageName];
     self.nickNameLable.text = self.people.nickName;
-    //[self.gradeLable addSubview:self.people.grade];
-    self.gradeLable.backgroundColor = [UIColor grayColor];
-    [self.gradeLable addSubview:starsScore_20];
+    
+    UIImage *backImage = [UIImage imageNamed:@"starBackground"];
+    self.gradeView.layer.contents =(id)backImage.CGImage;
+    
+    [self.gradeView addSubview:self.starsScore_20];
     [self.complaintButton setTitle:self.people.complaint forState:UIControlStateNormal];
     
     [self layoutIfNeeded];
@@ -46,10 +51,11 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    //[self sendStarValue];
     
     self.avaterImageView.frame = self.frameInfo.avaterImageViweFrame;
     self.nickNameLable.frame = self.frameInfo.nickNameLabelFrame;
-    self.gradeLable.frame = self.frameInfo.gradeLabelFrame;
+    self.gradeView.frame = self.frameInfo.gradeViewFrame;
     self.complaintButton.frame = self.frameInfo.complaintButtonFrame;
 }
 

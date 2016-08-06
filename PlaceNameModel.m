@@ -19,4 +19,12 @@
     return self;
 }
 
+- (instancetype)initWithLocationPlaceName:(NSString *)locationPlaceName
+{
+    self = [super init];
+    if (self) {
+        self.locationPlaceName = locationPlaceName;
+    }
+    return self;
+}
 @end

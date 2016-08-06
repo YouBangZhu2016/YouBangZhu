@@ -13,11 +13,11 @@
 #define kImageViewHeigjht         50
 
 @interface LocCellFrameInfo()
-@property (nonatomic, strong) LocationPlaceModel *locationPlace;
+@property (nonatomic, strong) PlaceNameModel *locationPlace;
 
 @end
 @implementation LocCellFrameInfo
-- (instancetype)initWithLocationPlace:(LocationPlaceModel *)locationPlace
+- (instancetype)initWithLocationPlace:(PlaceNameModel *)locationPlace
 {
     self = [super init];
     if (self) {

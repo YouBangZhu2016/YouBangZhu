@@ -14,7 +14,7 @@
 #import "YBZBaseNaviController.h"
 #import "YBZPopularViewCell.h"
 #import "YBZPopularFrameInfo.h"
-
+#import "WebAgent.h"
 #import "MJRefresh.h"
 
 #define kImageCount 5
@@ -53,10 +53,11 @@
 //popularCell
 
 @property (nonatomic, strong) UIImageView *popularImageView;
+@property (nonatomic, strong) UILabel     *popularImageViewLabel;
 @property (nonatomic, strong) UITableView *popularCellView;
 @property (nonatomic, strong) NSMutableArray *cellArr;
 @property (nonatomic, strong) UIView      *bottomView;
-
+@property (nonatomic, strong) UIImageView *backgroundImageView;
 
 
 //@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
@@ -70,7 +71,7 @@
 
 
 //判断登录状态
-@property(nonatomic,assign) BOOL isLogin;
+@property(nonatomic,assign) NSString* isLogin;
 @property(nonatomic,assign) BOOL isUser;
 
 
@@ -80,23 +81,23 @@
 @implementation YBZTranslationController
 
 - (void)viewDidLoad {
-
-    [super viewDidLoad];
     
-    self.isLogin = YES;
+    [super viewDidLoad];
     self.isUser = YES;
     
     //self.view.backgroundColor = [UIColor grayColor];
     
     //[self.view addSubview:self.popularCell];
+    [self.view addSubview:self.backgroundImageView];
     [self.view addSubview:self.popularCellView];
+
     
     [self.bottomView addSubview:self.newsView];
     [self.newsView addSubview:self.newsLabel];
     [self.newsView addSubview:self.newsLeftImageView];
     [self.newsView addSubview:self.newsRightImageView];
     
-
+    
     [self.bottomView addSubview:self.userBtn];
     [self.bottomView addSubview:self.translaterBtn];
     
@@ -114,32 +115,33 @@
     
     //popularCell
     [self.bottomView addSubview:self.popularImageView];
+    [self.bottomView addSubview:self.popularImageViewLabel];
     [self initData];
-
     
     
-//    for (int i=0; i<kImageCount; i++) {
-//        NSString *imageName=[NSString stringWithFormat:@"img_%02d",i+1];
-//        UIImage *image=[UIImage imageNamed:imageName];
-//        
-//        UIImageView *imageView=[[UIImageView alloc] initWithFrame:self.scrollView.bounds];
-//        imageView.image=image;
-//        
-//        [self.scrollView addSubview:imageView];
-//    }
+    
+    //    for (int i=0; i<kImageCount; i++) {
+    //        NSString *imageName=[NSString stringWithFormat:@"img_%02d",i+1];
+    //        UIImage *image=[UIImage imageNamed:imageName];
+    //
+    //        UIImageView *imageView=[[UIImageView alloc] initWithFrame:self.scrollView.bounds];
+    //        imageView.image=image;
+    //
+    //        [self.scrollView addSubview:imageView];
+    //    }
     [self addImageView];
     [self startTimer];
     
     
     //集成刷新控件
     [self setupRefresh];
-
+    
 }
 
 - (void)setupRefresh
 {
     // 1.下拉刷新(进入刷新状态就会调用self的headerRereshing)
-        [self.popularCellView addHeaderWithTarget:self action:@selector(headerRereshing)];
+    [self.popularCellView addHeaderWithTarget:self action:@selector(headerRereshing)];
     // dateKey用于存储刷新时间，可以保证不同界面拥有不同的刷新时间
     [self.popularCellView addHeaderWithTarget:self action:@selector(headerRereshing) dateKey:@"table"];
 #warning 自动刷新(一进入程序就下拉刷新)
@@ -161,10 +163,10 @@
 #pragma mark 开始进入刷新状态
 - (void)headerRereshing
 {
-//    // 1.添加假数据
-//    for (int i = 0; i<5; i++) {
-//        [self.cellArr insertObject:MJRandomData atIndex:0];
-//    }
+    //    // 1.添加假数据
+    //    for (int i = 0; i<5; i++) {
+    //        [self.cellArr insertObject:MJRandomData atIndex:0];
+    //    }
     
     // 2.模拟2秒后刷新表格UI（真实开发中，可以移除这段gcd代码）
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -178,11 +180,11 @@
 
 - (void)footerRereshing
 {
-//    // 1.添加假数据
-//    for (int i = 0; i<5; i++) {
-//        [self.cellArr addObject:MJRandomData];
-//    }
-//    
+    //    // 1.添加假数据
+    //    for (int i = 0; i<5; i++) {
+    //        [self.cellArr addObject:MJRandomData];
+    //    }
+    //
     // 2.模拟2秒后刷新表格UI（真实开发中，可以移除这段gcd代码）
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // 刷新表格
@@ -198,11 +200,17 @@
     
     self.cellArr = [[NSMutableArray alloc]init];
     
-    YBZPopularFrameInfo *popularCellView1 = [[YBZPopularFrameInfo alloc]initWithTitle:@"TITLE" AndLevel:@"lv 5" AndState:@"finish" AndContent:@"content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,"];
+    YBZPopularFrameInfo *popularCellView1 = [[YBZPopularFrameInfo alloc]initWithTitle:@"TITLE" AndLevel:@"lv 5" AndState:@"finish" AndContent:@"正文"];
     [self.cellArr addObject:popularCellView1];
     
-    YBZPopularFrameInfo *popularCellView2 = [[YBZPopularFrameInfo alloc]initWithTitle:@"TITLE" AndLevel:@"lv 5" AndState:@"finish" AndContent:@"content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,"];
+    YBZPopularFrameInfo *popularCellView2 = [[YBZPopularFrameInfo alloc]initWithTitle:@"TITLE" AndLevel:@"lv 5" AndState:@"finish" AndContent:@"正文"];
     [self.cellArr addObject:popularCellView2];
+    
+    YBZPopularFrameInfo *popularCellView3 = [[YBZPopularFrameInfo alloc]initWithTitle:@"TITLE" AndLevel:@"lv 5" AndState:@"finish" AndContent:@"正文"];
+    [self.cellArr addObject:popularCellView3];
+    
+    YBZPopularFrameInfo *popularCellView4 = [[YBZPopularFrameInfo alloc]initWithTitle:@"TITLE" AndLevel:@"lv 5" AndState:@"finish" AndContent:@"正文"];
+    [self.cellArr addObject:popularCellView4];
     
 }
 
@@ -265,7 +273,7 @@
     cell.contentLabel.text = model.content;
     
     return cell;
-
+    
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -300,17 +308,17 @@
 - (void)tapUIscrollView{
     
     NSLog(@"%ld",(long)self.pageControl.currentPage);
-
-
     
-//
-//    switch (i = self.pageControl.currentPage) {
-//        case 0:
-//            break;
-//            
-//        default:
-//            break;
-//    }
+    
+    
+    //
+    //    switch (i = self.pageControl.currentPage) {
+    //        case 0:
+    //            break;
+    //
+    //        default:
+    //            break;
+    //    }
     
     
 }
@@ -336,7 +344,7 @@
     
     self.translaterBtn.selected = YES;
     self.translaterBtn.backgroundColor = [UIColor orangeColor];
-
+    
     
 }
 
@@ -351,24 +359,50 @@
 
 -(void)intoChangeLanguageClick{
     
-    if (self.isLogin) {
-        
-//        YBZChangeLanguageViewController *changelangeVC = [[YBZChangeLanguageViewController alloc]initWithTitle:@"切换语言"];
-        
-    
-        YBZInterpretViewController  *changelangeVC = [[YBZInterpretViewController alloc]init];
-        
-        changelangeVC.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:changelangeVC animated:YES];
-        
-    }else{
-        
-        //进入登陆流程
+    NSUserDefaults *userinfo = [NSUserDefaults standardUserDefaults];
+    NSDictionary *user_id = [userinfo dictionaryForKey:@"user_id"];
+    if(user_id[@"user_id"] == NULL)
+    {
         YBZLoginViewController *logVC = [[YBZLoginViewController alloc]initWithTitle:@"登录"];
         YBZBaseNaviController *nav = [[YBZBaseNaviController alloc]initWithRootViewController:logVC];
         logVC.view.backgroundColor = [UIColor whiteColor];
         [self presentViewController:nav animated:YES completion:nil];
-        
+    }
+    else
+    {
+        [WebAgent userLoginState:user_id[@"user_id"] success:^(id responseObject) {
+            NSData *data = [[NSData alloc]initWithData:responseObject];
+            NSDictionary *str= [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            self.isLogin = str[@"state"];
+            NSLog(@"%@",self.isLogin);
+            if ([self.isLogin  isEqual: @"1"]) {
+                
+                //        YBZChangeLanguageViewController *changelangeVC = [[YBZChangeLanguageViewController alloc]initWithTitle:@"切换语言"];
+                
+                
+                YBZInterpretViewController  *changelangeVC = [[YBZInterpretViewController alloc]init];
+                
+                changelangeVC.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:changelangeVC animated:YES];
+                
+                YBZChangeLanguageViewController *changelanguageVC = [[YBZChangeLanguageViewController alloc]initWithTitle:@"切换语言"];
+                changelanguageVC.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:changelanguageVC animated:YES];
+                
+            }else{
+                
+                //进入登陆流程
+                YBZLoginViewController *logVC = [[YBZLoginViewController alloc]initWithTitle:@"登录"];
+                YBZBaseNaviController *nav = [[YBZBaseNaviController alloc]initWithRootViewController:logVC];
+                logVC.view.backgroundColor = [UIColor whiteColor];
+                [self presentViewController:nav animated:YES completion:nil];
+                
+            }
+            
+        }
+                         failure:^(NSError *error) {
+                             NSLog(@"22222");
+                         }];
     }
     
 }
@@ -438,11 +472,12 @@
     if (!_freeTransBtn) {
         _freeTransBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_freeTransBtn setTitle:@"免费翻译" forState:UIControlStateNormal];
-        _freeTransBtn.backgroundColor = [UIColor purpleColor];
+        [_freeTransBtn setImage:[UIImage imageNamed:@"译员首页7"] forState:UIControlStateNormal];
+        //_freeTransBtn.backgroundColor = [UIColor purpleColor];
         _freeTransBtn.frame = CGRectMake(UIScreenWidth / 2 - UITranslationBtnMargin * 1.5 - UITranslationBtnSize * 2, CGRectGetMaxY(self.userBtn.frame) + 20, UITranslationBtnSize , UITranslationBtnSize);
         [_freeTransBtn addTarget:self action:@selector(intoFreeTranslationClick) forControlEvents:UIControlEventTouchUpInside];
         _freeTransBtn.layer.cornerRadius = UITranslationBtnSize / 2;
-
+        
     }
     return _freeTransBtn;
 }
@@ -451,8 +486,8 @@
     
     if (!_freeTransLabel) {
         _freeTransLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMidX(self.freeTransBtn.frame) - 35, CGRectGetMaxY(self.freeTransBtn.frame) + 2, 70, 15)];
-        //_freeTransLabel.backgroundColor = [UIColor greenColor];
         [_freeTransLabel setText:@"免费翻译"];
+        [_freeTransLabel setTextColor:[UIColor colorWithRed:19 / 255.0 green:137 / 255.0 blue:143/255.0 alpha:1]];
         _freeTransLabel.textAlignment = NSTextAlignmentCenter;
         
         _freeTransLabel.font = [UIFont systemFontOfSize:14];
@@ -466,12 +501,13 @@
     if (!_interpretBtn) {
         _interpretBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_interpretBtn setTitle:@"口语即时" forState:UIControlStateNormal];
-        _interpretBtn.backgroundColor = [UIColor purpleColor];
+        [_interpretBtn setImage:[UIImage imageNamed:@"译员首页8"] forState:UIControlStateNormal];
+        //_interpretBtn.backgroundColor = [UIColor purpleColor];
         //_interpretBtn.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 100, CGRectGetMaxY(self.translaterBtn.frame) + 20, 100, 50);
         _interpretBtn.frame = CGRectMake(CGRectGetMidX(self.freeTransBtn.frame) + UITranslationBtnSize / 2 + UITranslationBtnMargin, CGRectGetMaxY(self.userBtn.frame) + 20, UITranslationBtnSize, UITranslationBtnSize);
         [_interpretBtn addTarget:self action:@selector(intoChangeLanguageClick) forControlEvents:UIControlEventTouchUpInside];
         _interpretBtn.layer.cornerRadius = UITranslationBtnSize / 2;
-
+        
     }
     return _interpretBtn;
 }
@@ -480,8 +516,8 @@
     
     if (!_interpretLabel) {
         _interpretLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMidX(self.interpretBtn.frame) - 35, CGRectGetMaxY(self.interpretBtn.frame) + 2, 70, 15)];
-        //_interpretLabel.backgroundColor = [UIColor greenColor];
         [_interpretLabel setText:@"口语即时"];
+        [_interpretLabel setTextColor:[UIColor colorWithRed:19 / 255.0 green:137 / 255.0 blue:143/255.0 alpha:1]];
         _interpretLabel.textAlignment = NSTextAlignmentCenter;
         
         _interpretLabel.font = [UIFont systemFontOfSize:14];
@@ -496,7 +532,8 @@
     if (!_customMadeBtn) {
         _customMadeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_customMadeBtn setTitle:@"Btn3" forState:UIControlStateNormal];
-        _customMadeBtn.backgroundColor = [UIColor purpleColor];
+        [_customMadeBtn setImage:[UIImage imageNamed:@"译员首页9"] forState:UIControlStateNormal];
+        //_customMadeBtn.backgroundColor = [UIColor purpleColor];
         //_interpretBtn.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 100, CGRectGetMaxY(self.translaterBtn.frame) + 20, 100, 50);
         _customMadeBtn.frame = CGRectMake(CGRectGetMidX(self.interpretBtn.frame) + UITranslationBtnSize / 2 + UITranslationBtnMargin, CGRectGetMaxY(self.userBtn.frame) + 20, UITranslationBtnSize, UITranslationBtnSize);
         [_customMadeBtn addTarget:self action:@selector(intoChangeLanguageClick) forControlEvents:UIControlEventTouchUpInside];
@@ -513,6 +550,7 @@
         _customMadeLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMidX(self.customMadeBtn.frame) - 35, CGRectGetMaxY(self.customMadeBtn.frame) + 2, 70, 15)];
         //_customMadeLabel.backgroundColor = [UIColor greenColor];
         [_customMadeLabel setText:@"定制翻译"];
+        [_customMadeLabel setTextColor:[UIColor colorWithRed:19 / 255.0 green:137 / 255.0 blue:143/255.0 alpha:1]];
         _customMadeLabel.textAlignment = NSTextAlignmentCenter;
         
         _customMadeLabel.font = [UIFont systemFontOfSize:14];
@@ -527,12 +565,13 @@
     if (!_myOfferBtn) {
         _myOfferBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_myOfferBtn setTitle:@"Btn4" forState:UIControlStateNormal];
-        _myOfferBtn.backgroundColor = [UIColor purpleColor];
+        [_myOfferBtn setImage:[UIImage imageNamed:@"译员首页10"] forState:UIControlStateNormal];
+        //_myOfferBtn.backgroundColor = [UIColor purpleColor];
         //_interpretBtn.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 100, CGRectGetMaxY(self.translaterBtn.frame) + 20, 100, 50);
         _myOfferBtn.frame = CGRectMake(CGRectGetMaxX(self.customMadeBtn.frame) + UITranslationBtnMargin, CGRectGetMaxY(self.userBtn.frame) + 20, UITranslationBtnSize, UITranslationBtnSize);
         [_myOfferBtn addTarget:self action:@selector(intoChangeLanguageClick) forControlEvents:UIControlEventTouchUpInside];
         _myOfferBtn.layer.cornerRadius = UITranslationBtnSize / 2;
-
+        
     }
     return _myOfferBtn;
 }
@@ -543,6 +582,7 @@
         _myOfferLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMidX(self.myOfferBtn.frame) - 35, CGRectGetMaxY(self.myOfferBtn.frame) + 2, 70, 15)];
         //_myOfferLabel.backgroundColor = [UIColor greenColor];
         [_myOfferLabel setText:@"我的悬赏"];
+        [_myOfferLabel setTextColor:[UIColor colorWithRed:19 / 255.0 green:137 / 255.0 blue:143/255.0 alpha:1]];
         _myOfferLabel.textAlignment = NSTextAlignmentCenter;
         
         _myOfferLabel.font = [UIFont systemFontOfSize:14];
@@ -617,9 +657,9 @@
 - (UIView *)newsView{
     
     if (!_newsView) {
-        _newsView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.scrollView.frame), UIScreenWidth, 28)];
-        _newsView.backgroundColor = [UIColor lightGrayColor];
-
+        _newsView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.scrollView.frame), UIScreenWidth, UIScreenHeight * 0.05)];
+        _newsView.backgroundColor = [UIColor colorWithRed:238 / 255.0 green:237 / 255.0 blue:237 / 255.0 alpha:1];
+        
     }
     return _newsView;
 }
@@ -627,11 +667,12 @@
 - (UILabel *)newsLabel{
     
     if (!_newsLabel) {
-        _newsLabel = [[UILabel alloc]initWithFrame:CGRectMake(50, 0, UIScreenWidth - 100, 28)];
-        _newsLabel.backgroundColor = [UIColor purpleColor];
-        
-        [_newsLabel setText:@"啦啦啦"];
-        
+        _newsLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMidX(self.newsView.frame) - UIScreenWidth * 0.36, 0, UIScreenWidth * 0.72, UIScreenHeight * 0.05)];
+        //_newsLabel.backgroundColor = [UIColor purpleColor];
+        //_newsLabel.adjustsFontSizeToFitWidth = YES;
+        _newsLabel.font = FONT_15;
+        [_newsLabel setText:@"新消息在这里～"];
+        [_newsLabel setTextColor:[UIColor whiteColor]];
     }
     return _newsLabel;
     
@@ -640,8 +681,10 @@
 - (UIImageView *)newsLeftImageView{
     
     if (!_newsLeftImageView) {
-        _newsLeftImageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, 0, 28, 28)];
-        _newsLeftImageView.backgroundColor = [UIColor redColor];
+        _newsLeftImageView = [[UIImageView alloc]initWithFrame:CGRectMake(15, CGRectGetMidY(self.newsLabel.frame) - UIScreenHeight * 0.016, UIScreenHeight * 0.04, UIScreenHeight * 0.032)];
+        [_newsLeftImageView setImage:[UIImage imageNamed:@"译员首页1"]];
+        //_newsLeftImageView.clipsToBounds  = YES;
+        //_newsLeftImageView.backgroundColor = [UIColor redColor];
     }
     
     return _newsLeftImageView;
@@ -651,8 +694,13 @@
 - (UIImageView *)newsRightImageView{
     
     if (!_newsRightImageView) {
-        _newsRightImageView = [[UIImageView alloc]initWithFrame:CGRectMake(UIScreenWidth - 48, 0, 28, 28)];
-        _newsRightImageView.backgroundColor = [UIColor redColor];
+        _newsRightImageView = [[UIImageView alloc]initWithFrame:CGRectMake(UIScreenWidth - 15 - UIScreenHeight * 0.04, CGRectGetMidY(self.newsLabel.frame) - UIScreenHeight * 0.016, UIScreenHeight * 0.04, UIScreenHeight * 0.032)];
+        [_newsRightImageView setImage:[UIImage imageNamed:@"译员首页2"]];
+        //_newsRightImageView.contentMode =  UIViewContentModeScaleAspectFill;
+
+        
+        //_newsRightImageView.clipsToBounds  = YES;
+        //_newsRightImageView.backgroundColor = [UIColor redColor];
     }
     
     return _newsRightImageView;
@@ -691,19 +739,31 @@
 - (UIImageView *)popularImageView{
     if (!_popularImageView) {
         _popularImageView = [[UIImageView alloc]init];
-        _popularImageView.backgroundColor = [UIColor orangeColor];
-        _popularImageView.frame = CGRectMake(0, CGRectGetMaxY(self.freeTransLabel.frame) + 10, 100, 36);
+        //_popularImageView.backgroundColor = [UIColor orangeColor];
+        [_popularImageView setImage:[UIImage imageNamed:@"译员首页11"]];
+        _popularImageView.frame = CGRectMake(18, CGRectGetMaxY(self.freeTransLabel.frame) + 10, (UIScreenWidth + 50) / 2 , 36);
     }
     return _popularImageView;
+}
+
+- (UILabel *)popularImageViewLabel{
+    if (!_popularImageViewLabel) {
+        _popularImageViewLabel = [[UILabel alloc]initWithFrame:CGRectMake(55, CGRectGetMaxY(self.freeTransLabel.frame) + 10, 160, 36)];
+        _popularImageViewLabel.text = @"实时热门";
+        _popularImageViewLabel.font = FONT_20;
+        [_popularImageViewLabel setTextColor:[UIColor orangeColor]];
+        _popularImageViewLabel.backgroundColor = [UIColor clearColor];
+    }
+    return _popularImageViewLabel;
 }
 
 
 - (UITableView *)popularCellView{
     if (!_popularCellView) {
-        _popularCellView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, UIScreenWidth, UIScreenHeight)];
+        _popularCellView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, UIScreenWidth, UIScreenHeight - 108)];
         
         
-        _popularCellView.backgroundColor = [UIColor whiteColor];
+        _popularCellView.backgroundColor = [UIColor clearColor];
         
         _popularCellView.separatorStyle = UITableViewCellSeparatorStyleNone;
         
@@ -729,9 +789,20 @@
     if (!_bottomView) {
         _bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, UIScreenWidth, CGRectGetMaxY(self.popularImageView.frame) + 5)];
         
-        _bottomView.backgroundColor = [UIColor yellowColor];
+        _bottomView.backgroundColor = [UIColor clearColor];
     }
     return _bottomView;
+}
+
+- (UIImageView *)backgroundImageView{
+    
+    if (!_backgroundImageView) {
+        _backgroundImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, UIScreenHeight - UIScreenWidth * 0.667, UIScreenWidth, UIScreenWidth * 0.667)];
+        _backgroundImageView.image = [UIImage imageNamed:@"backgroundImage"];
+    
+    }
+    return _backgroundImageView;
+    
 }
 
 

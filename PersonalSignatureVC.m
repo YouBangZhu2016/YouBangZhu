@@ -19,6 +19,7 @@
 @property(nonatomic,strong)UIView *myView;//灰色背景UIView
 @property(nonatomic,strong)UITextView *individualSignatureTV;//个性签名输入框
 @property(nonatomic,strong)UILabel *inputCharacterNumberLabel;//UILabel统计可输入字符字数
+@property(nonatomic,strong)UIButton *saveBtn;
 
 @end
 
@@ -32,6 +33,8 @@
     [self.view addSubview:self.myView];
     [self.view addSubview:self.individualSignatureTV];
     [self.view addSubview:self.inputCharacterNumberLabel];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.saveBtn];
     
 }
 
@@ -47,6 +50,23 @@
     }
     return _myView;
     
+}
+
+-(UIButton *)saveBtn
+{
+    if (!_saveBtn) {
+        _saveBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 64, 64)];
+        [_saveBtn setTitle:@"完成" forState:UIControlStateNormal];
+        [_saveBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_saveBtn addTarget:self action:@selector(clickSaveBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _saveBtn;
+}
+
+-(void)clickSaveBtnAction
+{
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"changeSignature" object:nil userInfo:@{@"个性签名":self.individualSignatureTV.text}];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 //Begin 个性签名文本框的系列设置

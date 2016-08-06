@@ -12,23 +12,13 @@
 #import "PlaceNameModel.h"
 #import "SelectedCellFrameInfo.h"
 #import "SelectedMessageInfoCell.h"
-#import "LocationPlaceModel.h"
 #import "LocCellFrameInfo.h"
 #import "LocMessageInfoCell.h"
 
-@interface LocationViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,CLLocationManagerDelegate>
+@interface LocationViewController : UIViewController
 
-@property (nonatomic, strong) UITableView *mainTabelView;
-@property (nonatomic, strong) NSArray *dataArray;
-@property (nonatomic, strong) NSArray *locArray;
-@property (nonatomic, strong) UILabel *locationLabel ;
-@property (nonatomic, strong) PlaceNameModel *place;
-@property (nonatomic, strong) NSIndexPath *index;
-@property (nonatomic, assign) CLLocationDegrees latitudeText;
-@property (nonatomic, assign) CLLocationDegrees longitudeText;
+@property (nonatomic, strong) NSString *locationInfo;
 
-@property (nonatomic, strong) CLLocationManager *locationManager;
-@property (nonatomic, strong) CLGeocoder *geocoder;
 
 
 @end

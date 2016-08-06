@@ -12,8 +12,13 @@
 #import "AccountAndSafeViewController.h"
 #import "AboutViewController.h"
 #import "HelpViewController.h"
+#import "YBZTranslationController.h"
+#import "WebAgent.h"
+#import "APIClient.h"
 @interface UserSetViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *usersetTabView;
+@property (nonatomic , strong) NSDictionary *dataDic;
+@property (nonatomic , strong) NSDictionary *stateDic;
 
 @end
 
@@ -22,9 +27,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor grayColor];
+    self.view.backgroundColor = [UIColor redColor];
     self.usersetTabView.delegate = self;
     self.usersetTabView.dataSource = self;
+    NSUserDefaults *userinfo = [NSUserDefaults standardUserDefaults];
+    NSDictionary *user_id = [userinfo dictionaryForKey:@"user_id"];
+
+    [WebAgent userGetInfo:user_id[@"user_id"] success:^(id responseObject) {
+        NSData *data = [[NSData alloc]initWithData:responseObject];
+        self.dataDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        self.stateDic = @{@"stateinfo":[self.dataDic objectForKey:@"account_state"]};
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:self.stateDic forKey:@"stateinfo"];
+        
+    } failure:^(NSError *error) {
+        NSLog(@"cuole");
+    }];
     self.navigationItem.title = @"设置";
      [[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
     [self.view addSubview:self.usersetTabView];
@@ -58,12 +76,11 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     if(indexPath.row == 0 && indexPath.section == 0){
         UserSetTableViewCell *setCell = [[UserSetTableViewCell alloc]init];
         setCell.textLabel.text = @"账号与安全";
-        UIImageView *proImg = [[UIImageView alloc]initWithFrame:CGRectMake(self.view.bounds.size.width*0.7,0, self.view.bounds.size.width*0.2, setCell.contentView.bounds.size.height*0.9)];
-        proImg.image = [UIImage imageNamed:@"protectimage"];
-        [setCell.contentView addSubview:proImg];
+        
         return setCell;}
     if(indexPath.row == 1 && indexPath.section == 0){
         UserSetTableViewCell *setCell = [[UserSetTableViewCell alloc]init];
@@ -90,14 +107,14 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
     if(section == 0)
-        return 5;
+        return 12;
     else
-        return 7;
+        return 0;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50;
+    return self.view.bounds.size.height*0.074;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -124,6 +141,23 @@
                 {
                     AboutViewController *aasVC = [[AboutViewController alloc]init];
                     [self.navigationController pushViewController:aasVC animated:YES];
+                }
+                else
+                {
+                    
+                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"myDictionary"];
+                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"stateinfo"];
+                    NSUserDefaults *userinfo = [NSUserDefaults standardUserDefaults];
+                    NSDictionary *user_id = [userinfo dictionaryForKey:@"user_id"];
+               
+                    [WebAgent userLogout:user_id[@"user_id"] success:^(id responseObject) {
+                        
+                    } failure:^(NSError *error) {
+                        
+                    }];
+                    [[NSUserDefaults standardUserDefaults] synchronize];
+                    [[NSNotificationCenter defaultCenter]postNotificationName:@"setTextALabel" object:nil];
+                    [self.navigationController popToRootViewControllerAnimated:YES];
                 }
             }
         

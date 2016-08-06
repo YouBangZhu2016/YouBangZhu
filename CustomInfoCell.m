@@ -22,7 +22,6 @@
     self.frameInfo = frameInfo;
     self.nameLable.text = self.infoModel.name;
     self.receiveInfoLable.text = self.infoModel.receiveInfo;
-    self.receiveInfoLable.backgroundColor = [UIColor redColor];
     [self layoutIfNeeded];
 }
 

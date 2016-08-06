@@ -36,7 +36,7 @@
             receiveInfoLableX = minReceiveInfoLableX;
             receiveInfoLableWidth = minReceiveInfoLableX;
         }
-        self.receiveInfoLableFrame = CGRectMake(receiveInfoLableX, kSubViewVerticalHeight, receiveInfoLableWidth, infoSize.height);
+        self.receiveInfoLableFrame = CGRectMake(200, kSubViewVerticalHeight,kScreenWith-kSubViewHorizontalMargin-200, infoSize.height);
     }
     return self;
 }

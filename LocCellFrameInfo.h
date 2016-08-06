@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LocationPlaceModel.h"
+#import "PlaceNameModel.h"
 #import <UIKit/UIKit.h>
 
 @interface LocCellFrameInfo : NSObject
@@ -15,5 +15,5 @@
 @property (nonatomic, assign) CGRect locationPlaceLabelFrame;
 @property (nonatomic, assign) CGFloat cellHeight;
 
-- (instancetype)initWithLocationPlace:(LocationPlaceModel *)locationPlace;
+- (instancetype)initWithLocationPlace:(PlaceNameModel *)locationPlace;
 @end

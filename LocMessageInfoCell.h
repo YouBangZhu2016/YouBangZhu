@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "LocCellFrameInfo.h"
-#import "LocationPlaceModel.h"
+#import "PlaceNameModel.h"
 
 @interface LocMessageInfoCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *LocImageView;
 @property (weak, nonatomic) IBOutlet UILabel *LocationPlaceLabel;
 
-@property (nonatomic, strong) LocationPlaceModel *locationPlaceName;
+@property (nonatomic, strong) PlaceNameModel *locationPlaceName;
 @property (nonatomic, strong) LocCellFrameInfo *locFrameInfo;
 
--(void)setCellData:(LocationPlaceModel *)locationPlaceName locFrameInfo:(LocCellFrameInfo *)locFrameInfo;
+-(void)setCellData:(PlaceNameModel *)locationPlaceName locFrameInfo:(LocCellFrameInfo *)locFrameInfo;
 @end

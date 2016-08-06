@@ -1,0 +1,403 @@
+[ 2016-08-03T09:43:49+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/userloginstate/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000707s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000599s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0561s ]
+SQL: SELECT * FROM `user_info` WHERE `user_id` = 'C0F8E591-F26D-426D-A828-271A93DF54BB' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.018816s ]
+INFO: [ app_end ] --END-- [ RunTime:0.018873s ]
+
+[ 2016-08-03T09:43:51+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000264s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000458s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0466s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0164s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000432s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000459s ]
+
+[ 2016-08-03T09:43:55+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/evaluate/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000306s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000288s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000320s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `translator_evaluateinfo` [ RunTime:0.0535s ]
+SQL: INSERT INTO `translator_evaluateinfo` (`translator_id`,`valuator_id`,`evaluate_infostar`,`evaluate_infotext`,`evaluate_time`) VALUES ('7777','C0F8E591-F26D-426D-A828-271A93DF54BB','2.65','','2016-08-03 09:43:54') [ RunTime:0.0905s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000556s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000610s ]
+
+[ 2016-08-03T09:47:07+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/userloginstate/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000598s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000640s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0198s ]
+SQL: SELECT * FROM `user_info` WHERE `user_id` = 'C0F8E591-F26D-426D-A828-271A93DF54BB' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000599s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000629s ]
+
+[ 2016-08-03T09:47:14+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000306s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0910s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000397s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000422s ]
+
+[ 2016-08-03T09:47:15+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/evaluate/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000282s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000748s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000856s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `translator_evaluateinfo` [ RunTime:0.0024s ]
+SQL: INSERT INTO `translator_evaluateinfo` (`translator_id`,`valuator_id`,`evaluate_infostar`,`evaluate_infotext`,`evaluate_time`) VALUES ('7777','C0F8E591-F26D-426D-A828-271A93DF54BB','0','','2016-08-03 09:47:15') [ RunTime:0.0368s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000679s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000722s ]
+
+[ 2016-08-03T09:47:21+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/userloginstate/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000304s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `user_info` WHERE `user_id` = 'C0F8E591-F26D-426D-A828-271A93DF54BB' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000416s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000441s ]
+
+[ 2016-08-03T09:47:21+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000248s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = 'C0F8E591-F26D-426D-A828-271A93DF54BB' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000378s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000402s ]
+
+[ 2016-08-03T09:48:31+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/userloginstate/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000451s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000479s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `user_info` WHERE `user_id` = 'C0F8E591-F26D-426D-A828-271A93DF54BB' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000671s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000707s ]
+
+[ 2016-08-03T09:48:37+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000305s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000349s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000378s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0357s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000411s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000435s ]
+
+[ 2016-08-03T09:48:38+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/evaluate/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000651s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `translator_evaluateinfo` [ RunTime:0.0021s ]
+SQL: INSERT INTO `translator_evaluateinfo` (`translator_id`,`valuator_id`,`evaluate_infostar`,`evaluate_infotext`,`evaluate_time`) VALUES ('7777','C0F8E591-F26D-426D-A828-271A93DF54BB','0','','2016-08-03 09:48:38') [ RunTime:0.1017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000377s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000403s ]
+
+[ 2016-08-03T09:49:12+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/userloginstate/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000276s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000286s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000311s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `user_info` WHERE `user_id` = 'C0F8E591-F26D-426D-A828-271A93DF54BB' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000375s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000400s ]
+
+[ 2016-08-03T10:21:11+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/userloginstate/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000490s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000515s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000546s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `user_info` WHERE `user_id` = 'C0F8E591-F26D-426D-A828-271A93DF54BB' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000747s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000780s ]
+
+[ 2016-08-03T10:21:12+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000248s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0155s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = '7777' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000390s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000415s ]
+
+[ 2016-08-03T10:21:14+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/evaluate/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000318s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000737s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `translator_evaluateinfo` [ RunTime:0.0022s ]
+SQL: INSERT INTO `translator_evaluateinfo` (`translator_id`,`valuator_id`,`evaluate_infostar`,`evaluate_infotext`,`evaluate_time`) VALUES ('7777','C0F8E591-F26D-426D-A828-271A93DF54BB','0','','2016-08-03 10:21:13') [ RunTime:0.0726s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000698s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000770s ]
+
+[ 2016-08-03T10:21:15+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/userloginstate/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000201s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000279s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0106s ]
+SQL: SELECT * FROM `user_info` WHERE `user_id` = 'C0F8E591-F26D-426D-A828-271A93DF54BB' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000418s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000449s ]
+
+[ 2016-08-03T10:21:15+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000187s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000227s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000250s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = 'C0F8E591-F26D-426D-A828-271A93DF54BB' LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000364s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000388s ]
+
+[ 2016-08-03T10:21:16+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/userloginstate/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000248s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `user_info` WHERE `user_id` = 'C0F8E591-F26D-426D-A828-271A93DF54BB' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000509s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000541s ]
+
+[ 2016-08-03T10:21:16+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/edit/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000209s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000285s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_detailedinfo` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `user_detailedinfo` WHERE `user_id` = 'C0F8E591-F26D-426D-A828-271A93DF54BB' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000397s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000425s ]
+
+[ 2016-08-03T10:21:22+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/userloginstate/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000304s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user_info` WHERE `user_id` = 'C0F8E591-F26D-426D-A828-271A93DF54BB' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000346s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000371s ]
+
+[ 2016-08-03T10:21:22+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getUserInfo/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000285s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0347s ]
+SQL: SELECT * FROM `user_saftyinfo` WHERE `user_id` = 'C0F8E591-F26D-426D-A828-271A93DF54BB' LIMIT 1   [ RunTime:0.0181s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000422s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000450s ]
+
+[ 2016-08-03T10:21:27+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/user_logout/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000405s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000443s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0235s ]
+SQL: SHOW COLUMNS FROM `user_saftyinfo` [ RunTime:0.0016s ]
+SQL: UPDATE `user_info` SET `user_loginstate`='0' WHERE `user_id` = 'C0F8E591-F26D-426D-A828-271A93DF54BB' [ RunTime:0.0702s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000566s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000598s ]
+
+[ 2016-08-03T10:21:27+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/userloginstate/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000372s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `user_info` WHERE `user_id` = 'C0F8E591-F26D-426D-A828-271A93DF54BB' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000411s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000451s ]
+
+[ 2016-08-03T10:21:51+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/userloginstate/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000198s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000325s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user_info` WHERE `user_id` = 'C0F8E591-F26D-426D-A828-271A93DF54BB' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000365s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000389s ]
+
+[ 2016-08-03T10:22:05+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/login/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000005s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000278s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `user_info` WHERE `user_phone` = '15122463580' LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000358s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000382s ]
+
+[ 2016-08-03T10:22:07+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/getValidateAndFamilyPhoneInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000006s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000190s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000235s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000256s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 496 行.
+NOTIC: [8] Undefined variable: user_phone /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 368 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000601s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000647s ]
+
+[ 2016-08-03T11:22:06+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/userloginstate/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000628s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000722s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 497 行.
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.1172s ]
+SQL: SELECT * FROM `user_info` WHERE `user_id` = 'C0F8E591-F26D-426D-A828-271A93DF54BB' LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.069773s ]
+INFO: [ app_end ] --END-- [ RunTime:0.069819s ]
+
+[ 2016-08-03T11:22:27+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/login/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000220s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000293s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 497 行.
+SQL: SHOW COLUMNS FROM `user_info` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `user_info` WHERE `user_phone` = '12345678901' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `user_info` SET `user_loginstate`='1' WHERE `user_phone` = '12345678901' [ RunTime:0.0493s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000383s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000409s ]
+
+[ 2016-08-03T11:22:27+08:00 ] 127.0.0.1 /TravelHelper/index.php/Home/User/accountState
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000513s ]
+NOTIC: [2] Declaration of Home\Controller\UserController::Get($url) should be compatible with Think\Controller::get($name = '') /Applications/XAMPP/xamppfiles/htdocs/TravelHelper/Application/Home/Controller/UserController.class.php 第 497 行.
+ERR: 非法操作:accountState
+

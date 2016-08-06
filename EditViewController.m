@@ -15,7 +15,12 @@
 #import "ASBirthSelectSheet.h"
 #import "PersonalSignatureVC.h"
 #import "LocationViewController.h"
+#import "AFNetworking.h"
+#import "WebAgent.h"
 
+#define kSubViewHorizontalMargin 12
+#define kSubViewVerticalHeight  14
+#define kScreenWith   [[UIScreen mainScreen]bounds].size.width
 
 @interface EditViewController ()<UITableViewDelegate,UITableViewDataSource,UIActionSheetDelegate>
 
@@ -27,6 +32,8 @@
 @property(nonatomic,strong)PickAvatarImage *pickImage;
 @property(nonatomic,strong)NSString *passNickname;
 @property(nonatomic,strong)NSString *birthdayText;
+@property(nonatomic,strong)UIBarButtonItem *backBI;
+
 @end
 
 @implementation EditViewController
@@ -37,8 +44,9 @@
     self.title = @"编辑个人资料";
     self.mainTableView.delegate = self;
     self.mainTableView.dataSource = self;
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.addBtn];
-    [self.view addSubview:self.mainTableView];
+    self.navigationItem.leftBarButtonItem = self.backBI;
     
     self.pickImage = [[PickAvatarImage alloc]init];
     self.pickImage.selfController = self;
@@ -46,6 +54,8 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changePhotoImage:) name:@"changePhotoImage" object:nil];
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeNickName:) name:@"changeUserInfoNickName" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeSignature:) name:@"changeSignature" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(getLocationInfo:) name:@"getLocationInfo" object:nil];
 }
 
 
@@ -57,47 +67,58 @@
 }
 
 #pragma mark - 观察者方法
+-(void)getLocationInfo:(NSNotification *)noti{
+    NSString *location = noti.userInfo[@"location"];
+    NSIndexPath *index = [NSIndexPath indexPathForRow:0 inSection:2];
+    CustomInfoCell *cell = [self.mainTableView cellForRowAtIndexPath:index];
+    cell.receiveInfoLable.text = location;
+}
 
 -(void)changePhotoImage:(NSNotification *)noti{
-    
     UIImage *image = noti.userInfo[@"image"];
-    NSLog(@"%f%f",image.size.width,image.size.height);
-    
     self.userIconImageV.image = image;
-    
 }
 
-
-
-
-
--(void)dealloc{
-    
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"changePhotoImage" object:nil];
-    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"changeUserInfoNickName" object:nil];
-
-    
-}
-
-////////////////////////////////////////////
 -(void)changeNickName:(NSNotification *)noti{
-   
     NSDictionary *nameDictionary = [noti userInfo];
-     _passNickname = [nameDictionary objectForKey:@"昵称"];
-    
+    _passNickname = [nameDictionary objectForKey:@"昵称"];
     NSIndexPath *index = [NSIndexPath indexPathForRow:0 inSection:1];
     CustomInfoCell *cell = [self.mainTableView cellForRowAtIndexPath:index];
-    
-    cell.receiveInfoLable.text = _passNickname;
-    
-    
-}
-//-(void)dealloc
-//{
-//   
-//    
-//}
 
+    cell.receiveInfoLable.text = _passNickname;
+}
+
+-(void)changeSignature:(NSNotification *)noti{
+    NSDictionary *signatureDic = [noti userInfo];
+    NSIndexPath *index = [NSIndexPath indexPathForRow:1 inSection:2];
+    CustomInfoCell *cell = [self.mainTableView cellForRowAtIndexPath:index];
+    cell.receiveInfoLable.text = [signatureDic objectForKey:@"个性签名"];
+}
+
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"changePhotoImage" object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"changeUserInfoNickName" object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"changeSignature" object:nil];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"getLocationInfo" object:nil];
+}
+
+#pragma mark -  返回按钮
+-(UIBarButtonItem *)backBI
+{
+    if (!_backBI) {
+        UIButton *backBtn= [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+        [backBtn setImage:[UIImage imageNamed:@"back_lly"] forState:UIControlStateNormal];
+        [backBtn addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+        _backBI = [[UIBarButtonItem alloc]initWithCustomView:backBtn];
+    }
+    return _backBI;
+}
+
+#pragma mark -  返回按钮点击事件
+-(void)back
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 #pragma mark -  保存按钮
 
 -(UIButton *)addBtn
@@ -111,14 +132,41 @@
     return _addBtn;
 }
 
-
-
-
-#pragma mark - 按钮点击事件
+#pragma mark - 保存按钮点击事件
 
 -(void)addBtnClick
 {
-    NSLog(@"you have click me !!!");
+    NSIndexPath *nicknameIndex = [NSIndexPath indexPathForRow:0 inSection:1];
+    CustomInfoCell *nicknameCell = [self.mainTableView cellForRowAtIndexPath:nicknameIndex];
+    NSIndexPath *sexIndex = [NSIndexPath indexPathForRow:1 inSection:1];
+    CustomInfoCell *sexCell = [self.mainTableView cellForRowAtIndexPath:sexIndex];
+    NSIndexPath *birthIndex = [NSIndexPath indexPathForRow:2 inSection:1];
+    CustomInfoCell *birthCell = [self.mainTableView cellForRowAtIndexPath:birthIndex];
+    NSIndexPath *districtIndex = [NSIndexPath indexPathForRow:0 inSection:2];
+    CustomInfoCell *districtCell = [self.mainTableView cellForRowAtIndexPath:districtIndex];
+    NSIndexPath *signatureIndex = [NSIndexPath indexPathForRow:1 inSection:2];
+    CustomInfoCell *signatureCell = [self.mainTableView cellForRowAtIndexPath:signatureIndex];
+    NSUserDefaults *userinfo = [NSUserDefaults standardUserDefaults];
+    NSDictionary *user_id = [userinfo dictionaryForKey:@"user_id"];
+    [WebAgent userid:user_id[@"user_id"] usernickname:nicknameCell.receiveInfoLable.text usersex:sexCell.receiveInfoLable.text userbirth:birthCell.receiveInfoLable.text userdistrict:districtCell.receiveInfoLable.text usersignature:signatureCell.receiveInfoLable.text success:^(id responseObject) {
+        //生成本地
+        NSDictionary *userinfo = @{@"user_nickname":nicknameCell.receiveInfoLable.text,
+                                   @"user_sex":sexCell.receiveInfoLable.text,
+                                   @"user_birth":birthCell.receiveInfoLable.text,
+                                   @"user_district":districtCell.receiveInfoLable.text,
+                                   @"user_signature":signatureCell.receiveInfoLable.text,
+                                   };
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:userinfo forKey:@"myDictionary"];
+        
+        NSLog(@"%@",nicknameCell.receiveInfoLable.text);
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"setTextALabel" object:nil
+                                                          userInfo:@{@"文本":nicknameCell.receiveInfoLable.text}];
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - 主视图设置
@@ -135,7 +183,6 @@
 
 -(UIImageView *)userIconImageV
 {
-  
     if (!_userIconImageV) {
         _userIconImageV = [[UIImageView alloc]initWithFrame:CGRectMake(self.view.bounds.size.width/2-70, 10, 140, 140)];
         _userIconImageV.layer.masksToBounds=YES;
@@ -144,26 +191,48 @@
         _userIconImageV.layer.borderColor=[[UIColor whiteColor] CGColor];
         _userIconImageV.image=[UIImage imageNamed:_profilePhoteName];
     }
-    
-    
     return _userIconImageV;
 }
 
 #pragma mark - 网络接口
 
 -(void)loadDataFromWeb
-{
+{   //头像👦
     InformationModel *photoNameInfo = [[InformationModel alloc]initWithPhotoName:@"ProfilePhoto"];
     _profilePhoteName = photoNameInfo.photoName;
-    InformationModel *nickNameInfo = [[InformationModel alloc]initWithname:@"昵称" receiveInfo: @"asd" ];
-    InformationModel *sexInfo = [[InformationModel alloc]initWithname:@"性别" receiveInfo:@"女"];
-    InformationModel *birthdayInfo = [[InformationModel alloc]initWithname:@"生日" receiveInfo:@"as"];
-    InformationModel *districtInfo = [[InformationModel alloc]initWithname:@"地区" receiveInfo:@"山西"];
-    InformationModel *signatureInfo = [[InformationModel alloc]initWithname:@"个性签名" receiveInfo:@"未填写"];
-    _dataArr = @[nickNameInfo,sexInfo,birthdayInfo,districtInfo,signatureInfo];
+    
+    NSUserDefaults *userinfo = [NSUserDefaults standardUserDefaults];
+    NSDictionary *myDictionary = [userinfo dictionaryForKey:@"myDictionary"];
+    NSDictionary *user_id = [userinfo dictionaryForKey:@"user_id"];
+    if(myDictionary == NULL)
+    {
+    [WebAgent userid:user_id[@"user_id"] success:^(id responseObject) {
+        [self.view addSubview:self.mainTableView];
+        NSData *data = [[NSData alloc]initWithData:responseObject];
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        NSDictionary *userInfo = dic[@"user_info"];
+        InformationModel *nickNameInfo = [[InformationModel alloc]initWithname:@"昵称" receiveInfo: userInfo[@"user_nickname"] ];
+        InformationModel *sexInfo = [[InformationModel alloc]initWithname:@"性别" receiveInfo:userInfo[@"user_sex"]];
+        InformationModel *birthdayInfo = [[InformationModel alloc]initWithname:@"生日" receiveInfo:userInfo[@"user_birth"]];
+        InformationModel *districtInfo = [[InformationModel alloc]initWithname:@"地区" receiveInfo:userInfo[@"user_district"]];
+        InformationModel *signatureInfo = [[InformationModel alloc]initWithname:@"个性签名" receiveInfo:userInfo[@"user_signature"]];
+        self.dataArr = @[nickNameInfo,sexInfo,birthdayInfo,districtInfo,signatureInfo];
+        NSLog(@"第一次");
+
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+    }else{
+        [self.view addSubview:self.mainTableView];
+        InformationModel *nickNameInfo = [[InformationModel alloc]initWithname:@"昵称" receiveInfo: myDictionary[@"user_nickname"] ];
+        InformationModel *sexInfo = [[InformationModel alloc]initWithname:@"性别" receiveInfo:myDictionary[@"user_sex"]];
+        InformationModel *birthdayInfo = [[InformationModel alloc]initWithname:@"生日" receiveInfo:myDictionary[@"user_birth"]];
+        InformationModel *districtInfo = [[InformationModel alloc]initWithname:@"地区" receiveInfo:myDictionary[@"user_district"]];
+        InformationModel *signatureInfo = [[InformationModel alloc]initWithname:@"个性签名" receiveInfo:myDictionary[@"user_signature"]];
+        self.dataArr = @[nickNameInfo,sexInfo,birthdayInfo,districtInfo,signatureInfo];
+        NSLog(@"第二次");
+    }
 }
-
-
 
 #pragma mark - 表示图协议
 
@@ -250,19 +319,13 @@
     if (buttonIndex == 0) {
         NSIndexPath *index = [NSIndexPath indexPathForRow:1 inSection:1];
         CustomInfoCell *cell = [self.mainTableView cellForRowAtIndexPath:index];
-        
         cell.receiveInfoLable.text = @"男";
-
-        
     }else if (buttonIndex == 1) {
         NSIndexPath *index = [NSIndexPath indexPathForRow:1 inSection:1];
         CustomInfoCell *cell = [self.mainTableView cellForRowAtIndexPath:index];
-        
         cell.receiveInfoLable.text = @"女";
     }else if(buttonIndex == 2) {
-        
     }
-    
 }
 
 #pragma mark - 界面跳转
@@ -310,7 +373,6 @@
             [self.navigationController pushViewController:locationVC animated:YES];
         }
         if (indexPath.row == 1) {
-            NSLog(@"sdfsdfs");
             PersonalSignatureVC *personSignatureVc = [[PersonalSignatureVC alloc]init];
             [self.navigationController pushViewController:personSignatureVc animated:YES];
         }

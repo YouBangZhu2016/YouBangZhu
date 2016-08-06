@@ -16,6 +16,35 @@
 
 //颜色
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+////字体
+#define FONT_20 IS_IPHONE_6P ? [UIFont systemFontOfSize:23] : IS_IPHONE_6 ? [UIFont systemFontOfSize:21] : [UIFont systemFontOfSize:20]
+#define FONT_19 IS_IPHONE_6P ? [UIFont systemFontOfSize:22] : IS_IPHONE_6 ? [UIFont systemFontOfSize:20] : [UIFont systemFontOfSize:19]
+#define FONT_18 IS_IPHONE_6P ? [UIFont systemFontOfSize:21] : IS_IPHONE_6 ? [UIFont systemFontOfSize:19] : [UIFont systemFontOfSize:18]
+#define FONT_17 IS_IPHONE_6P ? [UIFont systemFontOfSize:20] : IS_IPHONE_6 ? [UIFont systemFontOfSize:18] : [UIFont systemFontOfSize:17]
+#define FONT_16 IS_IPHONE_6P ? [UIFont systemFontOfSize:19] : IS_IPHONE_6 ? [UIFont systemFontOfSize:17] : [UIFont systemFontOfSize:16]
+#define FONT_15 IS_IPHONE_6P ? [UIFont systemFontOfSize:18] : IS_IPHONE_6 ? [UIFont systemFontOfSize:16] : [UIFont systemFontOfSize:15]
+#define FONT_14 IS_IPHONE_6P ? [UIFont systemFontOfSize:17] : IS_IPHONE_6 ? [UIFont systemFontOfSize:15] : [UIFont systemFontOfSize:14]
+#define FONT_13 IS_IPHONE_6P ? [UIFont systemFontOfSize:16] : IS_IPHONE_6 ? [UIFont systemFontOfSize:14] : [UIFont systemFontOfSize:13]
+#define FONT_12 IS_IPHONE_6P ? [UIFont systemFontOfSize:15] : IS_IPHONE_6 ? [UIFont systemFontOfSize:13] : [UIFont systemFontOfSize:12]
+#define FONT_11 IS_IPHONE_6P ? [UIFont systemFontOfSize:14] : IS_IPHONE_6 ? [UIFont systemFontOfSize:12] : [UIFont systemFontOfSize:11]
+#define FONT_10 IS_IPHONE_6P ? [UIFont systemFontOfSize:13] : IS_IPHONE_6 ? [UIFont systemFontOfSize:11] : [UIFont systemFontOfSize:10]
+
+
+
+
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)
+
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_MAX_LENGTH (MAX(SCREEN_WIDTH, SCREEN_HEIGHT))
+#define SCREEN_MIN_LENGTH (MIN(SCREEN_WIDTH, SCREEN_HEIGHT))
+
+#define IS_IPHONE_4_OR_LESS (IS_IPHONE && SCREEN_MAX_LENGTH < 568.0)
+#define IS_IPHONE_6 (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
+#define IS_IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
 
 //尺寸
 #define UIScreenWidth [UIScreen mainScreen].bounds.size.width

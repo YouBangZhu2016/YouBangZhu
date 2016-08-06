@@ -13,7 +13,7 @@
 
 @implementation LocMessageInfoCell
 
--(void)setCellData:(LocationPlaceModel *)locationPlaceName locFrameInfo:(LocCellFrameInfo *)locFrameInfo
+-(void)setCellData:(PlaceNameModel *)locationPlaceName locFrameInfo:(LocCellFrameInfo *)locFrameInfo
 {
     self.locationPlaceName = locationPlaceName;
     self.locFrameInfo = locFrameInfo;

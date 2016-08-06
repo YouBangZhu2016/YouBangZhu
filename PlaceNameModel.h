@@ -11,6 +11,8 @@
 @interface PlaceNameModel : NSObject
 @property (nonatomic, strong) NSString *placeName;
 @property (nonatomic, strong) NSString *selected;
+@property (nonatomic, strong) NSString *locationPlaceName;
 
 - (instancetype)initWithPlaceName:(NSString *)placeName selected:(NSString *)selected;
+- (instancetype)initWithLocationPlaceName:(NSString *)locationPlaceName;
 @end

@@ -1,10 +1,4 @@
-//
-//  GTStarsScore.h
-//  OCComponent_master
-//
-//  Created by 赵国腾 on 16/5/26.
-//  Copyright © 2016年 赵国腾. All rights reserved.
-//
+
 
 #import <UIKit/UIKit.h>
 
@@ -18,6 +12,7 @@
 
 /** 分数比例 10分 / 100 = 0.1 */
 @property (nonatomic, assign) CGFloat scoreScale;
+@property (nonatomic, assign) CGFloat value;
 
 @end
 

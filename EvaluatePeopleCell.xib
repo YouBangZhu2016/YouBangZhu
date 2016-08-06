@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
@@ -14,12 +13,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="369" height="87"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJk-l0-Etn">
-                        <rect key="frame" x="84" y="20" width="82" height="38"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fyH-u8-7AX">
                         <rect key="frame" x="-79" y="0.0" width="74" height="88"/>
                     </imageView>
@@ -30,10 +23,14 @@
                         </state>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ip5-sP-T9K">
-                        <rect key="frame" x="8" y="14" width="50" height="50"/>
+                        <rect key="frame" x="8" y="8" width="50" height="50"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaG-Rs-6a1">
-                        <rect key="frame" x="174" y="28" width="99" height="21"/>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M9N-hj-WvR">
+                        <rect key="frame" x="174" y="24" width="106" height="30"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJk-l0-Etn">
+                        <rect key="frame" x="91" y="20" width="82" height="38"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -43,10 +40,10 @@
             <connections>
                 <outlet property="avaterImageView" destination="Ip5-sP-T9K" id="jgk-VY-Rcy"/>
                 <outlet property="complaintButton" destination="ytg-14-lzu" id="EDt-PP-Ker"/>
-                <outlet property="gradeLable" destination="zaG-Rs-6a1" id="zS8-rS-eJS"/>
+                <outlet property="gradeView" destination="M9N-hj-WvR" id="z3V-OE-dlf"/>
                 <outlet property="nickNameLable" destination="iJk-l0-Etn" id="eUS-c1-zQV"/>
             </connections>
-            <point key="canvasLocation" x="292.5" y="419"/>
+            <point key="canvasLocation" x="270.5" y="422"/>
         </tableViewCell>
     </objects>
 </document>

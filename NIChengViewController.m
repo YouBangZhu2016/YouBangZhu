@@ -31,7 +31,6 @@
        [self.navigationItem.rightBarButtonItem setTintColor:[UIColor blackColor]];
        [self.navigationItem.rightBarButtonItem setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:14],NSFontAttributeName, nil] forState:UIControlStateNormal];
     // Do any additional setup after loading the view.
-    
     //自定义返回键
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     backBtn.frame = CGRectMake(0, 0, 40, 30);
@@ -39,8 +38,6 @@
     [backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
     [backBtn setImage:[UIImage imageNamed:@"backBtn.jpg"] forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
-    
-    
     
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
     self.navigationItem.leftBarButtonItem = backItem;
@@ -70,22 +67,15 @@
 #pragma mark - selectrightAction
 -(void)selectrightAction
 {
-    
     NSString *nickNameValue = _nickNameChange.text;
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:nickNameValue,@"昵称", nil];
     [[NSNotificationCenter defaultCenter]postNotificationName:@"changeUserInfoNickName" object:nil userInfo:dic];
     [self.navigationController popViewControllerAnimated:YES];
-    
-    
-    
-    
 }
 
 -(void)backAction
 {
 
-    
-    
  [self.navigationController popViewControllerAnimated:YES];
 
 }
