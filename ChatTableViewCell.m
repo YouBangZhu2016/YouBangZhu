@@ -18,7 +18,7 @@
 {
     self = [super init];
     if (self) {
-        self.backgroundColor = [UIColor redColor];
+        self.backgroundColor = [UIColor yellowColor];//免费翻译每条cell背景色
         self.frameInfo = [[ChatFrameInfo alloc]initWithModel:model];
         self.headView.frame = self.frameInfo.headBgViewFrame;
         self.headImageView.frame = self.frameInfo.headImageViewFrame;

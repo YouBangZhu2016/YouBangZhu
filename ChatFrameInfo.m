@@ -199,7 +199,7 @@
 //获取头像中ImageView的Frame
 -(void)getHeadImageViewFrame{
     
-    self.headImageViewFrame = CGRectMake(0, 0, self.headBgViewFrame.size.width , self.headBgViewFrame.size.height );
+    self.headImageViewFrame = CGRectMake(0, 4, self.headBgViewFrame.size.width , self.headBgViewFrame.size.height );
 }
 
 //获取聊天气泡当中text，Pickture，Audio的Frame

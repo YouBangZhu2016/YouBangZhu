@@ -512,7 +512,7 @@
     
     ChatTableViewCell *cell = [[ChatTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier Model:model];
     
-    return cell.height + 25;
+    return cell.height + 14;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -903,7 +903,7 @@
 -(BaseTableView *)bottomTableView{
     if (!_bottomTableView) {
         _bottomTableView = [[BaseTableView alloc]initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - CGRectGetHeight(self.inputBottomView.frame) - 64) style:UITableViewStylePlain];
-        _bottomTableView.backgroundColor = [UIColor orangeColor];
+        _bottomTableView.backgroundColor = [UIColor purpleColor];//免费翻译背景颜色
         _bottomTableView.idelegate = self;
         _bottomTableView.delegate = self;
         _bottomTableView.dataSource = self;
@@ -922,7 +922,7 @@
 
 -(UIView *)inputBottomView{
     if (!_inputBottomView) {
-        _inputBottomView = [[UIView alloc]initWithFrame:CGRectMake(0, kScreenHight*0.915, kScreenWidth, kScreenHight*0.085)];
+        _inputBottomView = [[UIView alloc]initWithFrame:CGRectMake(0, kScreenHight*0.93, kScreenWidth, kScreenHight*0.070)];
         
         _inputBottomView.backgroundColor  = [UIColor colorWithRed:240.0f/255.0f green:240.0f/255.0f  blue:240.0f/255.0f  alpha:1];
     }
@@ -934,7 +934,7 @@
     
     if (!_changeSendContentBtn) {
         _changeSendContentBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _changeSendContentBtn.frame = CGRectMake(kScreenWidth*0.04, kScreenWidth*0.03, kScreenWidth*0.1, kScreenWidth*0.085);
+        _changeSendContentBtn.frame = CGRectMake(kScreenWidth*0.02, kScreenWidth*0.02, kScreenWidth*0.1, kScreenWidth*0.085);
         [_changeSendContentBtn setImage:[UIImage imageNamed:@"yuyin"] forState:UIControlStateNormal];
         [_changeSendContentBtn addTarget:self action:@selector(changeSendContentClick) forControlEvents:UIControlEventTouchUpInside];
         _changeSendContentBtn.tag = 1001;//展示语音图片，点击切换成语音模式；
@@ -947,7 +947,7 @@
     
     if (!_selectLangueageBtn) {
         _selectLangueageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _selectLangueageBtn.frame = CGRectMake(kScreenWidth*0.82, kScreenWidth*0.03, kScreenWidth*0.14, kScreenWidth*0.085);
+        _selectLangueageBtn.frame = CGRectMake(kScreenWidth*0.85, kScreenWidth*0.02, kScreenWidth*0.14, kScreenWidth*0.085);
         [_selectLangueageBtn setImage:[UIImage imageNamed:@"select"] forState:UIControlStateNormal];
         [_selectLangueageBtn addTarget:self action:@selector(selectLangueageClick) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -957,12 +957,14 @@
 -(UITextView *)inputTextView{
     
     if (!_inputTextView) {
-        _inputTextView = [[UITextView alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.changeSendContentBtn.frame) + 8,  kScreenWidth*0.03, CGRectGetMinX(self.selectLangueageBtn.frame) - 8 - (CGRectGetMaxX(self.changeSendContentBtn.frame) + 8),  kScreenWidth*0.085)];
+        _inputTextView = [[UITextView alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.changeSendContentBtn.frame) + 8,  kScreenWidth*0.02, CGRectGetMinX(self.selectLangueageBtn.frame) - 8 - (CGRectGetMaxX(self.changeSendContentBtn.frame) + 8),  kScreenWidth*0.085)];
         _inputTextView.backgroundColor = [UIColor whiteColor];
+        _inputTextView.layer.cornerRadius = 4;
         _inputTextView.keyboardType = UIKeyboardTypeDefault;
         _inputTextView.returnKeyType = UIReturnKeySend;
         _inputTextView.scrollEnabled = YES;
         _inputTextView.delegate = self;
+        [_inputTextView setFont:FONT_16];
     }
     return _inputTextView;
 }

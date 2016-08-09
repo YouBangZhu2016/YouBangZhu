@@ -36,7 +36,7 @@
 		1E7056071D5324F400A000F5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7056061D5324F400A000F5 /* Security.framework */; };
 		1E7056091D53250A00A000F5 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7056081D53250A00A000F5 /* AdSupport.framework */; };
 		1E70560B1D5326A400A000F5 /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E70560A1D5326A400A000F5 /* PushConfig.plist */; };
-		1E70560D1D54E41100A000F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E70560C1D54E41100A000F5 /* Assets.xcassets */; };
+		1E7056111D596BE200A000F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E7056101D596BE200A000F5 /* Assets.xcassets */; };
 		1ED863081D2F39DD00529094 /* AFViewShaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED862EC1D2F39DD00529094 /* AFViewShaker.m */; };
 		1ED863091D2F39DD00529094 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1ED862EE1D2F39DD00529094 /* Info.plist */; };
 		1ED8630A1D2F39DD00529094 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED862F01D2F39DD00529094 /* MASCompositeConstraint.m */; };
@@ -255,7 +255,7 @@
 		1E7056061D5324F400A000F5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1E7056081D53250A00A000F5 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		1E70560A1D5326A400A000F5 /* PushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PushConfig.plist; sourceTree = "<group>"; };
-		1E70560C1D54E41100A000F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = YBZTravel/Assets.xcassets; sourceTree = "<group>"; };
+		1E7056101D596BE200A000F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = YBZTravel/Assets.xcassets; sourceTree = "<group>"; };
 		1ED862EB1D2F39DD00529094 /* AFViewShaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFViewShaker.h; sourceTree = "<group>"; };
 		1ED862EC1D2F39DD00529094 /* AFViewShaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFViewShaker.m; sourceTree = "<group>"; };
 		1ED862EE1D2F39DD00529094 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -833,8 +833,8 @@
 				A03ED08C1D2DE32000BD9C0A /* Translation */,
 				A03ED08B1D2DE31200BD9C0A /* FreeTravel */,
 				A03ED08D1D2DE33700BD9C0A /* User */,
+				1E7056101D596BE200A000F5 /* Assets.xcassets */,
 				A03ED0891D2DE2F600BD9C0A /* Other */,
-				1E70560C1D54E41100A000F5 /* Assets.xcassets */,
 				1ED862E91D2F39DD00529094 /* ThirdTools */,
 				A03ED0541D2DE20700BD9C0A /* YBZTravel */,
 				A03ED0551D2DE20700BD9C0A /* Supporting Files */,
@@ -1384,7 +1384,7 @@
 				1E70560B1D5326A400A000F5 /* PushConfig.plist in Resources */,
 				A0532CCD1D38D4FE00FC1AB1 /* UserTableViewCell.xib in Resources */,
 				A0552ED11D3A2C8C00E04D7A /* LocMessageInfoCell.xib in Resources */,
-				1E70560D1D54E41100A000F5 /* Assets.xcassets in Resources */,
+				1E7056111D596BE200A000F5 /* Assets.xcassets in Resources */,
 				A0532C881D38C3F600FC1AB1 /* AccountTableViewCell.xib in Resources */,
 				A0532C851D38C3F600FC1AB1 /* AccountAndSafeOtherTableViewCell.xib in Resources */,
 				1ED8631C1D2F839F00529094 /* YBZPopularViewCell.xib in Resources */,
