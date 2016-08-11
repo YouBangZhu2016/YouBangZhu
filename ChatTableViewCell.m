@@ -18,7 +18,7 @@
 {
     self = [super init];
     if (self) {
-        self.backgroundColor = [UIColor yellowColor];//免费翻译每条cell背景色
+        self.backgroundColor = [UIColor clearColor];//免费翻译每条cell背景色
         self.frameInfo = [[ChatFrameInfo alloc]initWithModel:model];
         self.headView.frame = self.frameInfo.headBgViewFrame;
         self.headImageView.frame = self.frameInfo.headImageViewFrame;
@@ -49,8 +49,8 @@
         self.messageID = model.messageID;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
-
-      
+        
+        
     }
     return self;
 }
@@ -82,7 +82,7 @@
 -(void)getAudioToTranslationText:(NSString *)text{
     
     self.AVtoStringLabel.text = text;
-
+    
 }
 
 
@@ -188,7 +188,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
@@ -229,7 +229,7 @@
     
     if (!_textChatLabel) {
         _textChatLabel = [[UILabel alloc]init];
-       
+        
         [_textChatLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:15]];
         _textChatLabel.lineBreakMode = UILineBreakModeWordWrap;
         _textChatLabel.numberOfLines = 0;
@@ -268,7 +268,7 @@
         [_secondLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:15]];
         _secondLabel.textAlignment = NSTextAlignmentCenter;
         _secondLabel.lineBreakMode = UILineBreakModeWordWrap;
-
+        
     }
     return _secondLabel;
 }
@@ -319,7 +319,7 @@
     utterance.pitchMultiplier = 1;
     utterance.volume = 1;
     [av speakUtterance:utterance];
-
+    
 }
 
 -(void)readText{

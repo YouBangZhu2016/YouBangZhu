@@ -74,15 +74,21 @@
     consumptionBottomLable.backgroundColor = [UIColor colorWithRed:242.0/255 green:242.0/255 blue:242.0/255 alpha:1];
     UILabel *consumptionLable = [[UILabel alloc] initWithFrame:CGRectMake(kScreenWindth*0.23,consumptionLableY, 0.42*kScreenWindth, kScreenHeight*0.12)];
     UIImage *gold = [UIImage imageNamed:@"gold"];
-    UIImageView *shareMoneyImg = [[UIImageView alloc]initWithImage:gold];
-    shareMoneyImg.frame =CGRectMake(0.64*kScreenWindth, 0.298*kScreenHeight, 0.046*kScreenWindth, 0.026*kScreenHeight);
-    int money = 1*10;
-    NSString *consumptionLableText = [NSString stringWithFormat:@"%@%d",@"本次消费的游币 ",money];
-    consumptionLable.text = consumptionLableText;
-    consumptionLable.font = [UIFont systemFontOfSize:20];
-    consumptionLable.backgroundColor = [UIColor colorWithRed:242.0/255 green:242.0/255 blue:242.0/255 alpha:1];;
+    UIImageView *moneyImg = [[UIImageView alloc]initWithImage:gold];
+    moneyImg.frame =CGRectMake(0.64*kScreenWindth, 0.298*kScreenHeight, 0.046*kScreenWindth, 0.026*kScreenHeight);
+    NSString *money = @"10";
+    NSString *consumptionLableText = [NSString stringWithFormat:@"%@%@",@"您本次消费游币 ",money];
+    NSMutableAttributedString *consumptionLablestr = [[NSMutableAttributedString alloc] initWithString:consumptionLableText];
+    [consumptionLablestr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0,consumptionLableText.length)];
+    [consumptionLablestr addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0,7)];
+    [consumptionLable setAttributedText:consumptionLablestr] ;
+    
+    
+    consumptionLable.backgroundColor = [UIColor colorWithRed:242.0/255 green:242.0/255 blue:242.0/255 alpha:1];
     [self.view addSubview:consumptionBottomLable];
     [self.view addSubview:consumptionLable];
+    [self.view addSubview:moneyImg];
+
     
     //提交
     CGFloat submitEvaluateY = consumptionLableY + kScreenHeight*0.12;
@@ -111,7 +117,7 @@
 {
     self.title = @"口语即时评价";
     //左上角的按钮
-    UIButton *boultButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 35, 35)];
+    UIButton *boultButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 0.05*kScreenWindth, 0.05*kScreenWindth)];
     [boultButton setImage:[UIImage imageNamed:@"boult"] forState:UIControlStateNormal];
     [boultButton addTarget:self action:@selector(interpretClick) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:boultButton];

@@ -221,7 +221,7 @@
     NSString *imageName = [NSString stringWithFormat:@"countryImg_%02ld", (long)indexPath.row];
     [cell.rightCountryImageView setImage:[UIImage imageNamed:imageName]];
     
-//    UIImage *image = [UIImage imageNamed:imageName];
+    //    UIImage *image = [UIImage imageNamed:imageName];
     
     
     //cell.leftCountryImageView.image = model.leftImage;
@@ -337,7 +337,7 @@
         [self.navigationController pushViewController:freeVC animated:YES];
     }
     
-
+    
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -368,7 +368,7 @@
         self.cellView.dataSource = self;
         
         
-
+        
     }
     
     return _cellView;
@@ -378,7 +378,7 @@
 - (void)intoFreeTranslationClick{
     
     FreeTransViewController  *freeVC = [[FreeTransViewController alloc]initWithUserID:@"001" WithTargetID:@"001" WithUserIdentifier:@"TRANSTOR" WithVoiceLanguage:Voice_YingYu WithTransLanguage:Trans_YingYu];
-
+    
     [self.navigationController pushViewController:freeVC animated:YES];
     
 }

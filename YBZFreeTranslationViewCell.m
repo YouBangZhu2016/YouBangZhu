@@ -42,13 +42,15 @@
 
 -(void)setSelected:(BOOL)selected animated:(BOOL)animated{
     
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     [super setSelected:selected animated:animated];
+    
 }
 
 - (void)layoutSubviews{
-
     
-
+    
+    
     
     [super layoutSubviews];
     
@@ -60,11 +62,11 @@
 - (UIView *)bottomView{
     
     if (!_bottomView) {
-    _bottomView = [[UILabel alloc]initWithFrame:CGRectMake(margin, UIScreenWidth * 0.04, UIScreenWidth - margin * 2, UIScreenWidth * 0.2)];
-    _bottomView.backgroundColor = [UIColor colorWithRed:168 / 255.0 green:168 / 255.0 blue:168 / 255.0 alpha:1];
-    _bottomView.layer.cornerRadius = 5;
-    _bottomView.layer.masksToBounds = YES;
-
+        _bottomView = [[UILabel alloc]initWithFrame:CGRectMake(margin, UIScreenWidth * 0.04, UIScreenWidth - margin * 2, UIScreenWidth * 0.2)];
+        _bottomView.backgroundColor = [UIColor colorWithRed:168 / 255.0 green:168 / 255.0 blue:168 / 255.0 alpha:1];
+        _bottomView.layer.cornerRadius = 5;
+        _bottomView.layer.masksToBounds = YES;
+        
     }
     return _bottomView;
 }
@@ -95,7 +97,7 @@
         _titleLabel.backgroundColor = [UIColor clearColor];
         _titleLabel.adjustsFontSizeToFitWidth = YES;
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-
+        
     }
     return _titleLabel;
 }
@@ -108,8 +110,8 @@
         _contentLabel.backgroundColor = [UIColor redColor];
         
         _contentLabel.textAlignment = NSTextAlignmentCenter;
-
-
+        
+        
     }
     return _contentLabel;
 }

@@ -36,7 +36,7 @@
     backBtn.frame = CGRectMake(0, 0, 40, 30);
    // backBtn.backgroundColor = [UIColor blackColor];
     [backBtn setImageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 15)];
-    [backBtn setImage:[UIImage imageNamed:@"backBtn.jpg"] forState:UIControlStateNormal];
+    [backBtn setImage:[UIImage imageNamed:@"back_lly"] forState:UIControlStateNormal];
     [backBtn addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];

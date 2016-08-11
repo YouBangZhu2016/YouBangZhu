@@ -28,7 +28,7 @@
             self.imageViewFrame = CGRectMake(kSubViewHorizontalMargin, kSubViewVerticalMargin, kImageViewWidth, kImageViewHeigjht);
             
             CGSize size = [locationPlace.locationPlaceName sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20]}];
-            self.locationPlaceLabelFrame = CGRectMake(self.imageViewFrame.size.width + kSubViewHorizontalMargin, kSubViewVerticalMargin, size.width, size.height);
+            self.locationPlaceLabelFrame = CGRectMake(self.imageViewFrame.size.width + kSubViewHorizontalMargin, kSubViewVerticalMargin, 300, size.height);
             self.cellHeight = self.imageViewFrame.size.height + 2 * kSubViewVerticalMargin;
         }
     }

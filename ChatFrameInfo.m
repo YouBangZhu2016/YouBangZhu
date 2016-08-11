@@ -43,14 +43,14 @@
     }
     
     if ([model.chatContentType isEqualToString:@"audio"]) {
-       
+        
         [self getObjectFrameOfTextViewWithChatContentType:model.chatContentType AndInfo:model.chatAudioContent];
         
         
     }
     
     [self getHeadViewFrameWithisSender:model.isSender];
-
+    
     [self getHeadImageViewFrame];
     
     [self getTextViewFrameWithisSender:model.isSender AndChatContent:model.chatContentType];
@@ -60,8 +60,8 @@
     [self getReadTranstorStringResultBtnFrame:model isSender:model.isSender];
     [self getSencondLabelFrame:model];
     [self getAVtoStringLabelFrame:model];
-
-  
+    
+    
 }
 
 #pragma mark - green + black

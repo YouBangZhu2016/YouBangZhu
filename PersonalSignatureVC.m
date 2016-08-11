@@ -17,6 +17,7 @@
 @interface PersonalSignatureVC ()<UITextViewDelegate>
 
 @property(nonatomic,strong)UIView *myView;//灰色背景UIView
+@property(nonatomic,strong)UILabel *lineLabel;
 @property(nonatomic,strong)UITextView *individualSignatureTV;//个性签名输入框
 @property(nonatomic,strong)UILabel *inputCharacterNumberLabel;//UILabel统计可输入字符字数
 @property(nonatomic,strong)UIButton *saveBtn;
@@ -30,6 +31,7 @@
     
     self.individualSignatureTV.delegate = self;
     
+    [self.view addSubview:self.lineLabel];
     [self.view addSubview:self.myView];
     [self.view addSubview:self.individualSignatureTV];
     [self.view addSubview:self.inputCharacterNumberLabel];
@@ -39,8 +41,19 @@
 }
 
 
+-(UILabel *)lineLabel{
+    
+    if(!_lineLabel){
+        
+        _lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 2)];
+        _lineLabel.backgroundColor = [UIColor colorWithRed:239/255.0 green:238/255.0 blue:244/255.0 alpha:1];
+        
+    }
+    
+    return _lineLabel;
+}
 
-#pragma mark -灰色背景UIViewget方法
+#pragma mark -UIViewget方法
 -(UIView *)myView{
     
     if (!_myView) {
@@ -69,7 +82,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-//Begin 个性签名文本框的系列设置
+//Begin 个性签名文本框的设置
 -(UITextView *)individualSignatureTV{
     
     if(!_individualSignatureTV){
@@ -77,7 +90,7 @@
         self.individualSignatureTV = [[UITextView alloc]initWithFrame:CGRectMake(0, self.myView.frame.origin.y+kTextViewVerticleMargin, self.view.bounds.size.width, self.view.bounds.size.height *85 / 730)];
         self.individualSignatureTV.backgroundColor = [UIColor whiteColor];
         self.individualSignatureTV.font = [UIFont systemFontOfSize:20];
-        self.individualSignatureTV.keyboardType = UIKeyboardTypeASCIICapable;
+        
         
         
     }
@@ -95,8 +108,8 @@
     if(self.individualSignatureTV.text.length>kMaxWordNumbers){
         
         self.individualSignatureTV.text = [self.individualSignatureTV.text substringToIndex:30];
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"" message:@"最多可输入30个字符" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
-        [alert show];
+        //        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"" message:@"最多可输入30个字符" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        //        [alert show];
         return;
     }
     
@@ -111,16 +124,17 @@
     
     if(!_inputCharacterNumberLabel){
         
-        self.inputCharacterNumberLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.individualSignatureTV.bounds.size.width-self.view.bounds.size.width * 18 / 410-kinputCharacterNumberLabelWidth, self.individualSignatureTV.frame.origin.y+self.individualSignatureTV.bounds.size.height-self.view.bounds.size.height *8 / 730-kinputCharacterNumberLabelHeight, kinputCharacterNumberLabelWidth, kinputCharacterNumberLabelHeight)];
+        self.inputCharacterNumberLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.individualSignatureTV.bounds.size.width-self.view.bounds.size.width * 18 / 410-20, self.individualSignatureTV.frame.origin.y+self.individualSignatureTV.bounds.size.height-self.view.bounds.size.height *8 / 730-20, kinputCharacterNumberLabelWidth, kinputCharacterNumberLabelHeight)];
+        self.inputCharacterNumberLabel.backgroundColor = [UIColor clearColor];
         self.inputCharacterNumberLabel.text = [NSString stringWithFormat:@"%i",kMaxWordNumbers];
         self.inputCharacterNumberLabel.textAlignment = NSTextAlignmentCenter;
         self.inputCharacterNumberLabel.textColor = [UIColor lightGrayColor];
-        self.inputCharacterNumberLabel.backgroundColor = [UIColor whiteColor];
         
         
     }
     return  _inputCharacterNumberLabel;
 }
+
 
 
 @end

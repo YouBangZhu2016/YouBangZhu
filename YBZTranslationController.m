@@ -16,6 +16,7 @@
 #import "YBZPopularFrameInfo.h"
 #import "WebAgent.h"
 #import "MJRefresh.h"
+#import "QuickTransViewController.h"
 
 #define kImageCount 5
 //#define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
@@ -140,6 +141,160 @@
     //集成刷新控件
     [self setupRefresh];
     
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(recieveARemoteRequire:) name:@"recieveARemoteRequire" object:nil];
+    
+}
+#pragma mark - 观察者方法
+-(void)recieveARemoteRequire:(NSNotification *)noti{
+    
+    NSString *yonghuID = noti.userInfo[@"yonghuID"];
+    NSString *language = noti.userInfo[@"language_catgory"];
+    NSString *pay_number = noti.userInfo[@"pay_number"];
+
+    
+    NSString *VoiceLanguage;
+    NSString *TransLanguage;
+    if ([language isEqualToString:@"English"]) {
+        
+        VoiceLanguage = Voice_YingYu;
+        TransLanguage = Trans_YingYu;
+    }
+    if ([language isEqualToString:@"MeiYu"]) {
+        
+        VoiceLanguage = Voice_MeiYu;
+        TransLanguage = Trans_MeiYu;
+    }
+    if ([language isEqualToString:@"HanYu"]) {
+        
+        VoiceLanguage = Voice_HanYu;
+        TransLanguage = Trans_HanYu;
+    }
+    if ([language isEqualToString:@"XiBanYa"]) {
+        
+        VoiceLanguage = Voice_XiBanYa;
+        TransLanguage = Trans_XiBanYa;
+    }
+    if ([language isEqualToString:@"TaiYu"]) {
+        
+        VoiceLanguage = Voice_TaiYu;
+        TransLanguage = Trans_TaiYu;
+    }
+    if ([language isEqualToString:@"ALaBoYu"]) {
+        
+        VoiceLanguage = Voice_ALaBoYu;
+        TransLanguage = Trans_ALaBoYu;
+    }
+    if ([language isEqualToString:@"EYu"]) {
+        
+        VoiceLanguage = Voice_EYu;
+        TransLanguage = Trans_EYu;
+    }
+    if ([language isEqualToString:@"PuTaoYaYu"]) {
+        
+        VoiceLanguage = Voice_PuTaoYaYu;
+        TransLanguage = Trans_PuTaoYaYu;
+    }
+    if ([language isEqualToString:@"XiLaYu"]) {
+        
+        VoiceLanguage = Voice_XiLaYu;
+        TransLanguage = Trans_XiLaYu;
+    }
+    if ([language isEqualToString:@"HeLanYu"]) {
+        
+        VoiceLanguage = Voice_HeLanYu;
+        TransLanguage = Trans_HeLanYu;
+    }
+    if ([language isEqualToString:@"BoLanYu"]) {
+        
+        VoiceLanguage = Voice_BoLanYu;
+        TransLanguage = Trans_BoLanYu;
+    }
+    if ([language isEqualToString:@"DanMaiYu"]) {
+        
+        VoiceLanguage = Voice_DanMaiYu;
+        TransLanguage = Trans_DanMaiYu;
+    }
+    if ([language isEqualToString:@"FenLanYu"]) {
+        
+        VoiceLanguage = Voice_FenLanYu;
+        TransLanguage = Trans_FenLanYu;
+    }
+    if ([language isEqualToString:@"JieKeYu"]) {
+        
+        VoiceLanguage = Voice_JieKeYu;
+        TransLanguage = Trans_JieKeYu;
+    }
+    if ([language isEqualToString:@"RuiDianYu"]) {
+        
+        VoiceLanguage = Voice_RuiDianYu;
+        TransLanguage = Trans_RuiDianYu;
+    }
+    if ([language isEqualToString:@"XiongYaLiYu"]) {
+        
+        VoiceLanguage = Voice_XiongYaLiYu;
+        TransLanguage = Trans_XiongYaLiYu;
+    }
+    if ([language isEqualToString:@"RiYu"]) {
+        
+        VoiceLanguage = Voice_RiYu;
+        TransLanguage = Trans_RiYu;
+    }
+    if ([language isEqualToString:@"FaYu"]) {
+        
+        VoiceLanguage = Voice_FaYa;
+        TransLanguage = Trans_FaYu;
+    }
+    if ([language isEqualToString:@"DeYu"]) {
+        
+        VoiceLanguage = Voice_DeYu;
+        TransLanguage = Trans_DeYu;
+    }
+    if ([language isEqualToString:@"YiDaLiYu"]) {
+        
+        VoiceLanguage = Voice_YiDaLiYu;
+        TransLanguage = Trans_YiDaLiYu;
+    }
+    
+    
+    NSUserDefaults *userdefault = [NSUserDefaults standardUserDefaults];
+    NSDictionary *userID = [userdefault objectForKey:@"user_id"];
+    
+    
+    [WebAgent interpreterStateWithuserId:yonghuID success:^(id responseObject) {
+       
+        NSData *data = [[NSData alloc]initWithData:responseObject];
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+    
+        NSString *msgString = dic[@"msg"];
+        if ([msgString isEqualToString:@"查询成功！并且可以成功匹配"]) {
+            QuickTransViewController *quickVC = [[QuickTransViewController alloc]initWithUserID:userID[@"user_id"] WithTargetID:yonghuID WithUserIdentifier:@"TRANSTOR" WithVoiceLanguage:VoiceLanguage WithTransLanguage:TransLanguage];
+            
+            [self.navigationController pushViewController:quickVC animated:YES];
+            
+            [WebAgent sendRemoteNotificationsWithuseId:yonghuID WithsendMessage:@"匹配成功" WithlanguageCatgory:language WithpayNumber:@"20" WithSenderID:userID[@"user_id"] success:^(id responseObject) {
+                NSLog(@"反馈推送—匹配成功通知成功！");
+            } failure:^(NSError *error) {
+                NSLog(@"反馈推送－匹配成功通知失败－－>%@",error);
+            }];
+        }else{
+            
+            UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"抱歉，该用户请求已经被别人抢先接单了！" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"我知道了" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            }];
+            [alertVC addAction:okAction];
+            [self presentViewController:alertVC animated:YES completion:nil];
+
+        }
+        
+    } failure:^(NSError *error) {
+        NSLog(@"查询用户请求信息失败＝＝＝>%@",error);
+    }];
+    
+    
+    
+}
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"recieveARemoteRequire" object:nil];
 }
 
 - (void)setupRefresh
@@ -204,16 +359,16 @@
     
     self.cellArr = [[NSMutableArray alloc]init];
     
-    YBZPopularFrameInfo *popularCellView1 = [[YBZPopularFrameInfo alloc]initWithTitle:@"TITLE" AndLevel:@"lv 5" AndState:@"finish" AndContent:@"正文"];
+    YBZPopularFrameInfo *popularCellView1 = [[YBZPopularFrameInfo alloc]initWithTitle:@"TITLE" AndLevel:@"lv 5" AndState:@"finish" AndContent:@"content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,"];
     [self.cellArr addObject:popularCellView1];
     
-    YBZPopularFrameInfo *popularCellView2 = [[YBZPopularFrameInfo alloc]initWithTitle:@"TITLE" AndLevel:@"lv 5" AndState:@"finish" AndContent:@"正文"];
+    YBZPopularFrameInfo *popularCellView2 = [[YBZPopularFrameInfo alloc]initWithTitle:@"TITLE" AndLevel:@"lv 5" AndState:@"finish" AndContent:@"content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,"];
     [self.cellArr addObject:popularCellView2];
     
-    YBZPopularFrameInfo *popularCellView3 = [[YBZPopularFrameInfo alloc]initWithTitle:@"TITLE" AndLevel:@"lv 5" AndState:@"finish" AndContent:@"正文"];
+    YBZPopularFrameInfo *popularCellView3 = [[YBZPopularFrameInfo alloc]initWithTitle:@"TITLE" AndLevel:@"lv 5" AndState:@"finish" AndContent:@"content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,"];
     [self.cellArr addObject:popularCellView3];
     
-    YBZPopularFrameInfo *popularCellView4 = [[YBZPopularFrameInfo alloc]initWithTitle:@"TITLE" AndLevel:@"lv 5" AndState:@"finish" AndContent:@"正文"];
+    YBZPopularFrameInfo *popularCellView4 = [[YBZPopularFrameInfo alloc]initWithTitle:@"TITLE" AndLevel:@"lv 5" AndState:@"finish" AndContent:@"content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,content,"];
     [self.cellArr addObject:popularCellView4];
     
 }
@@ -720,7 +875,7 @@
         _newsRightImageView = [[UIImageView alloc]initWithFrame:CGRectMake(UIScreenWidth - 15 - UIScreenHeight * 0.04, CGRectGetMidY(self.newsLabel.frame) - UIScreenHeight * 0.016, UIScreenHeight * 0.04, UIScreenHeight * 0.032)];
         [_newsRightImageView setImage:[UIImage imageNamed:@"译员首页2"]];
         //_newsRightImageView.contentMode =  UIViewContentModeScaleAspectFill;
-
+        
         
         //_newsRightImageView.clipsToBounds  = YES;
         //_newsRightImageView.backgroundColor = [UIColor redColor];
@@ -822,7 +977,7 @@
     if (!_backgroundImageView) {
         _backgroundImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, UIScreenHeight - UIScreenWidth * 0.667, UIScreenWidth, UIScreenWidth * 0.667)];
         _backgroundImageView.image = [UIImage imageNamed:@"backgroundImage"];
-    
+        
     }
     return _backgroundImageView;
     

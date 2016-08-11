@@ -10,10 +10,11 @@
 #import "AFNetworking.h"
 #import "WebAgent.h"
 #import "APIClient.h"
+#define kScreenWith  [UIScreen mainScreen].bounds.size.width
 
 @interface HelpViewController ()
 -(void)submitClick;
-@property (nonatomic ,strong) UITextField *submitTF;
+@property (nonatomic ,strong) UITextView *submitTF;
 
 @end
 
@@ -26,11 +27,23 @@
     self.title = @"帮助与反馈";
     
     
-    self.submitTF = [[UITextField alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 230)];
-    self.submitTF.backgroundColor = [UIColor orangeColor];
+    self.submitTF = [[UITextView alloc]initWithFrame:CGRectMake(kScreenWith*0.02, kScreenWith*0.013+64, kScreenWith*0.958, kScreenWith*0.37)];
+    self.submitTF.backgroundColor = [UIColor whiteColor];
+    self.submitTF.editable = YES;
+    self.submitTF.font = [UIFont boldSystemFontOfSize:20];
+    if ([self respondsToSelector:@selector(setAutomaticallyAdjustsScrollViewInsets:)]) {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    
+    //设置边框宽度
+    self.submitTF.layer.borderWidth = 1.0;
+    //设置边框颜色
+    self.submitTF.layer.borderColor = [UIColor grayColor].CGColor;
+    //设置圆角
+    self.submitTF.layer.cornerRadius = 5.0;
     [self.view addSubview:self.submitTF];
     
-    UIButton *submitB = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width-85, 300, 75, 30)];
+    UIButton *submitB = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width-85, kScreenWith*0.394+64, 75, 30)];
     submitB.backgroundColor = [UIColor orangeColor];
     [submitB setTitle:@"提交" forState:UIControlStateNormal];
     [submitB addTarget:self action:@selector(submitClick) forControlEvents:UIControlEventTouchDown];
@@ -41,7 +54,8 @@
 -(void)submitClick{
     if(self.submitTF.text.length == 0){
         
-        self.submitTF.placeholder = @"反馈信息不能为空";
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"反馈信息不能为空" message:nil delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil];
+        [alertView show];
         
     }
     

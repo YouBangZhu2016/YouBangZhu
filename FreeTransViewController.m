@@ -1,4 +1,4 @@
-  //
+//
 //  ViewController.m
 //  CharttingController
 //
@@ -69,10 +69,10 @@
 @end
 
 @implementation FreeTransViewController{
-  NSInteger  ascCount;
-  NSString   *iFlySpeechRecognizerString;
+    NSInteger  ascCount;
+    NSString   *iFlySpeechRecognizerString;
     CGFloat    KeyboardWillShowHeight;
-
+    
 }
 
 
@@ -107,12 +107,12 @@
     self.isRecognizer = NO;
     self.isZero = NO;
     self.isKeyboardShow = NO;
-     self.view.backgroundColor= [UIColor colorWithPatternImage:[UIImage imageNamed:@"bgp"]];
-//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
-   
+    self.view.backgroundColor= [UIColor colorWithPatternImage:[UIImage imageNamed:@"bgp"]];
+    //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+    
     _stringTransVC = [[StringTransViewController alloc]init];
     [_stringTransVC viewDidLoad];
-   
+    
     
     ascCount = 0;
     self.senderID = self.user_id;
@@ -127,7 +127,7 @@
     [self.inputBottomView addSubview:self.selectLangueageBtn];
     [self.inputBottomView addSubview:self.inputTextView];
     [self.bottomTableView setContentOffset:CGPointMake(0, self.bottomTableView.bounds.size.height)];
-
+    
     [self AddTapGestureRecognizer];
     [self reloadDataSourceWithNumber:ascCount];
     
@@ -149,7 +149,7 @@
 -(void)iFlySpeechRecognizerStop{
     [self.iFlySpeechRecognizer stopListening];//做完现在的任务
     self.isRecognizer = NO;
-
+    
 }
 
 -(void)iFlySpeechRecognizerCancel{
@@ -169,10 +169,10 @@
     if ([language isEqualToString:LANGUAGE_CHINESE]) {
         [self.iFlySpeechRecognizer setParameter: @"zh_cn" forKey:[IFlySpeechConstant LANGUAGE]];//中文
     }
-
-
+    
+    
     //asr_audio_path保存录音文件名,默认目录是documents
-//    [self.iFlySpeechRecognizer setParameter: @"asrview.pcm" forKey:[IFlySpeechConstant ASR_AUDIO_PATH]];
+    //    [self.iFlySpeechRecognizer setParameter: @"asrview.pcm" forKey:[IFlySpeechConstant ASR_AUDIO_PATH]];
     //设置返回的数据格式为默认plain
     [self.iFlySpeechRecognizer setParameter:@"plain" forKey:[IFlySpeechConstant RESULT_TYPE]];
     
@@ -208,7 +208,7 @@
     if (self.isCancelSendRecord == YES && self.isZero == YES) {
         
         //取消发送
-//        iFlySpeechRecognizerString = @"";
+        //        iFlySpeechRecognizerString = @"";
         
     }
     
@@ -218,7 +218,7 @@
         
         NSLog(@"asdasdsad%@",iFlySpeechRecognizerString);
         
-//        iFlySpeechRecognizerString = @"";
+        //        iFlySpeechRecognizerString = @"";
     }
     
     
@@ -278,7 +278,7 @@
     
     
     //////////
-//    iFlySpeechRecognizerString = @"今天天气不错！";
+    //    iFlySpeechRecognizerString = @"今天天气不错！";
     
     //////////
     NSDictionary *dict = @{@"senderID":self.senderID,
@@ -311,7 +311,7 @@
 //免费翻译进行
 
 -(void)freeTranslationMethod{
-   
+    
     if (iFlySpeechRecognizerString == nil || [iFlySpeechRecognizerString isEqualToString:@""]) {
         //不需要翻译
     }else{
@@ -369,7 +369,7 @@
 }
 
 -(void)sendTextMessageMethodWithString:(NSString *)text{
-
+    
     NSInteger count = self.dataArr.count;
     
     iFlySpeechRecognizerString = text;
@@ -429,11 +429,11 @@
             self.inputBottomView.transform = CGAffineTransformMakeTranslation(0, -KeyboardWillShowHeight);
             self.bottomTableView.transform = CGAffineTransformMakeTranslation(0, -moveY);
         }];
-
+        
     }
     
     [self performSelector:@selector(freeTranslationMethod) withObject:nil afterDelay:1.0f];
-
+    
 }
 //加载datasource
 -(void)reloadDataSourceWithNumber:(long)count{
@@ -516,7 +516,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    
     ChatTableViewCell *cell = [self.bottomTableView cellForRowAtIndexPath:indexPath];
     
     self.currentCellID = cell.messageID;
@@ -595,7 +595,7 @@
             if (self.isRecognizer == YES) {
                 [self iFlySpeechRecognizerStop];
             }
-          
+            
             
         }else{
             
@@ -635,7 +635,7 @@
         [self removeRecordPageView];
         
         [self.cwViewController cancelButtonClick];
-         self.isZero = YES;
+        self.isZero = YES;
         [self iFlySpeechRecognizerStop];
         iFlySpeechRecognizerString = @"";
         
@@ -647,7 +647,7 @@
         [self iFlySpeechRecognizerStop];
         [self sendRecordAudioWithRecordURLString:self.cellMessageID];
         
-      
+        
         self.isZero = YES;
         
         
@@ -697,7 +697,7 @@
 #pragma mark - 观察者模式
 
 -(void)keyboardWillShow:(NSNotification *)noti{
-   
+    
     self.isKeyboardShow = YES;
     
     NSInteger count = self.dataSource.count;
@@ -714,7 +714,7 @@
         cellMaxY = 0;
     }
     
-;
+    ;
     
     
     CGRect keyboardRect = [noti.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
@@ -769,7 +769,7 @@
     NSLog(@"变了");
     if ([self.inputTextView.text isEqualToString:@""] || self.inputTextView.text == nil) {
         
-         [self.sendMessageBtn removeFromSuperview];
+        [self.sendMessageBtn removeFromSuperview];
         
     }else{
         
@@ -781,7 +781,7 @@
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
     if ([text isEqualToString:@"\n"]){
-       
+        
         //发送消息！！！！！！
         [self sendTextMessageMethodWithString:textView.text];
         
@@ -831,7 +831,7 @@
     tapGesture.delegate = self;
     tapGesture.numberOfTapsRequired=1;
     tapGesture.numberOfTouchesRequired=1;
-//    [self.bottomTableView addGestureRecognizer:tapGesture];
+    //    [self.bottomTableView addGestureRecognizer:tapGesture];
     
 }
 
@@ -850,12 +850,12 @@
     [self.bottomTableView reloadData];
     
     [refresh endRefreshing];
-
+    
 }
 
 -(void)sendAudioInfoClick{
     
-//    NSLog(@"发送语音");
+    //    NSLog(@"发送语音");
 }
 
 -(void)benginRecordAudio{
@@ -903,7 +903,7 @@
 -(BaseTableView *)bottomTableView{
     if (!_bottomTableView) {
         _bottomTableView = [[BaseTableView alloc]initWithFrame:CGRectMake(0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - CGRectGetHeight(self.inputBottomView.frame) - 64) style:UITableViewStylePlain];
-        _bottomTableView.backgroundColor = [UIColor purpleColor];//免费翻译背景颜色
+        _bottomTableView.backgroundColor = [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1];//免费翻译背景颜色
         _bottomTableView.idelegate = self;
         _bottomTableView.delegate = self;
         _bottomTableView.dataSource = self;
@@ -924,7 +924,7 @@
     if (!_inputBottomView) {
         _inputBottomView = [[UIView alloc]initWithFrame:CGRectMake(0, kScreenHight*0.93, kScreenWidth, kScreenHight*0.070)];
         
-        _inputBottomView.backgroundColor  = [UIColor colorWithRed:240.0f/255.0f green:240.0f/255.0f  blue:240.0f/255.0f  alpha:1];
+        _inputBottomView.backgroundColor  = [UIColor colorWithRed:248.0f/255.0f green:248.0f/255.0f  blue:248.0f/255.0f  alpha:1];
     }
     
     return _inputBottomView;
@@ -1006,11 +1006,11 @@
         
         _refreshController = [[UIRefreshControl alloc]init];
         [_refreshController addTarget:self
-                            action:@selector(refreshView:)
-                  forControlEvents:UIControlEventValueChanged];
+                               action:@selector(refreshView:)
+                     forControlEvents:UIControlEventValueChanged];
         [_refreshController setAttributedTitle:[[NSAttributedString alloc] initWithString:@"加载更多数据。。"]];
     }
- 
+    
     return _refreshController;
 }
 
@@ -1037,6 +1037,7 @@
     return _subBottomView;
     
 }
+
 
 @end
 

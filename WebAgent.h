@@ -106,4 +106,31 @@ feedbackinfo_time:(NSString *)feedbackinfo_time
 //账号保护状态
 +(void)userId:(NSString *)user_id success:(void (^)(id responseObject))success
       failure:(void (^)(NSError *error))failure;
+
+
+//查找译员所会语种,匹配译员，返回所有译员ID，（发送推送用）
++(void)matchTranslatorWithchooseLanguage:(NSString *)choose_language
+                                 success:(void (^)(id responseObject))success
+                                 failure:(void (^)(NSError *error))failure;
+//查询用户口语即时请求状态。（匹配译员用）
++(void)interpreterStateWithuserId:(NSString *)user_id
+                          success:(void (^)(id responseObject))success
+                          failure:(void (^)(NSError *error))failure;
+
+//口语即时，发送远程推送APNS
++(void)sendRemoteNotificationsWithuseId:(NSString *)user_id
+                        WithsendMessage:(NSString *)send_message
+                    WithlanguageCatgory:(NSString *)language_catgory
+                          WithpayNumber:(NSString *)pay_number
+                           WithSenderID:(NSString *)sender_id
+                                success:(void (^)(id responseObject))success
+                                failure:(void (^)(NSError *error))failure;
+//语言
++(void)userIdentity:(NSString *)userIdentity
+       userLanguage:(NSString *)userLanguage
+             userID:(NSString *)userID
+            success:(void (^)(id responseObject))success
+            failure:(void (^)(NSError *error))failure;
+
+
 @end

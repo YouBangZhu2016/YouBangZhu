@@ -33,6 +33,7 @@
     
     
     self.textView = [[UITextView alloc]initWithFrame:CGRectMake(0, 194,self.view.bounds.size.width, self.view.bounds.size.height)];
+    self.textView.font = [UIFont boldSystemFontOfSize:20];
     [self.view addSubview:self.textView];
     
     

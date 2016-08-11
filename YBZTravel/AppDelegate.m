@@ -12,13 +12,13 @@
 #import <RongIMLib/RongIMLib.h>
 #import "FreeTransViewController.h"
 #import "JPUSHService.h"
-
+#import "WebAgent.h"
 
 #define Trans_YingYu    @"en"
 #define Voice_YingYu    @"en-GB"
 
 @interface AppDelegate ()
-
+@property(nonatomic,assign) NSString* isLogin;
 @end
 
 @implementation AppDelegate
@@ -99,10 +99,43 @@
 -(void)registerAliasAndTag{
     
     //可变
+//    NSUserDefaults *userdefault = [NSUserDefaults standardUserDefaults];
+//    NSString *userID = [userdefault objectForKey:@"user_id"];
+//    if (userID != nil && ![userID isEqualToString:@""]) {
+//        [JPUSHService setTags:nil alias:userID fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
+//            NSLog(@"isrescode----%d, itags------%@,ialias--------%@",iResCode,iTags,iAlias);
+//        }];
+//    }
     
-    [JPUSHService setTags:nil alias:@"001" fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
-        NSLog(@"isrescode----%d, itags------%@,ialias--------%@",iResCode,iTags,iAlias);
-    }];
+    
+    
+    NSUserDefaults *userdefault = [NSUserDefaults standardUserDefaults];
+    NSDictionary *userID = [userdefault objectForKey:@"user_id"];
+    if(userID == NULL){}
+    else
+    {
+    [WebAgent userLoginState:userID[@"user_id"] success:^(id responseObject) {
+        NSData *data = [[NSData alloc]initWithData:responseObject];
+        NSDictionary *str= [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        
+        self.isLogin = str[@"state"];
+        NSLog(@"%@",self.isLogin);
+        if ([self.isLogin  isEqual: @"1"])
+        {
+            [JPUSHService setTags:nil alias:userID[@"user_id"] fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias)
+             {
+                 
+                 NSLog(@"isrescode----%d, itags------%@,ialias--------%@",iResCode,iTags,iAlias);
+             }];
+            
+            
+        }
+        
+    }
+            failure:^(NSError *error) {
+                NSLog(@"this is 2222222 failure%@",error);
+            }];
+    }
     
 }
 
@@ -117,23 +150,53 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     
     // Required,For systems with less than or equal to iOS6
+    application.applicationIconBadgeNumber = (NSInteger)0;
     [JPUSHService handleRemoteNotification:userInfo];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     
     // IOS 7 Support Required
+    application.applicationIconBadgeNumber = (NSInteger)0;
     [JPUSHService handleRemoteNotification:userInfo];
     completionHandler(UIBackgroundFetchResultNewData);
     
+    NSString *yonghuID = [userInfo valueForKey:@"user_id"];
+    NSString *language_catgory = [userInfo valueForKey:@"language_catgory"];
+    NSString *pay_number = [userInfo valueForKey:@"pay_number"];
+    
     NSDictionary *aps = [userInfo valueForKey:@"aps"];
     NSString *content = [aps valueForKey:@"alert"]; //推送显示的内容
-    NSInteger badge = [[aps valueForKey:@"badge"] integerValue]; //badge数量
-    NSString *sound = [aps valueForKey:@"sound"]; //播放的声音
-    NSLog(@"asasaasdasd%@",userInfo);
-    // 取得Extras字段内容
-    NSString *customizeField1 = [userInfo valueForKey:@"customizeExtras"]; //服务端中Extras字段，key是自己定义的
-    NSLog(@"content =[%@], badge=[%ld], sound=[%@], customize field  =[%@]",content,(long)badge,sound,customizeField1);
+    
+    if ([content isEqualToString:@"匹配成功"]) {
+        
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"beginChatWithTranslator" object:@{@"translatorID":yonghuID,@"language_catgory":language_catgory,@"pay_number":pay_number}];
+        
+    }else{
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"接收到新的翻译任务！" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"现在就去" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+              [[NSNotificationCenter defaultCenter]postNotificationName:@"recieveARemoteRequire" object:@{@"yonghuID":yonghuID,@"language_catgory":language_catgory,@"pay_number":pay_number}];
+        }];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"算了吧" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        }];
+        [alertVC addAction:okAction];
+        [self.window.rootViewController presentViewController:alertVC animated:YES completion:nil];
+        
+      
+    }
+    
+    
+
+//    NSInteger badge = [[aps valueForKey:@"badge"] integerValue]; //badge数量
+//    NSString *sound = [aps valueForKey:@"sound"]; //播放的声音
+//    NSLog(@"asasaasdasd%@",userInfo);
+//    // 取得Extras字段内容
+//    NSString *customizeField1 = [userInfo valueForKey:@"customizeExtras"]; //服务端中Extras字段，key是自己定义的
+//    NSLog(@"content =[%@], badge=[%ld], sound=[%@], customize field  =[%@]",content,(long)badge,sound,customizeField1);
+    
+    
+    
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {

@@ -166,7 +166,6 @@ feedbackinfo_time:(NSString *)feedbackinfo_time
 }
 //验证登录
 +(void)userLoginState:(NSString *)userID
-
               success:(void (^)(id responseObject))success
               failure:(void (^)(NSError *error))failure
 {
@@ -314,7 +313,8 @@ feedbackinfo_time:(NSString *)feedbackinfo_time
 }
 
 //账号保护状态
-+(void)userId:(NSString *)user_id success:(void (^)(id responseObject))success
++(void)userId:(NSString *)user_id
+      success:(void (^)(id responseObject))success
       failure:(void (^)(NSError *error))failure
 {
     NSDictionary *dict = @{@"user_id":user_id};
@@ -324,4 +324,79 @@ feedbackinfo_time:(NSString *)feedbackinfo_time
         //
     }];
 }
+
+//查找译员所会语种,匹配译员，返回所有译员ID，（发送推送用）
++(void)matchTranslatorWithchooseLanguage:(NSString *)choose_language
+                         success:(void (^)(id responseObject))success
+                         failure:(void (^)(NSError *error))failure
+{
+    NSDictionary *dict = @{@"choose_language":choose_language};
+    [[APIClient sharedClient] POST:@"QuickTrans/matchTranslator" parameters:dict  success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(error);
+    }];
+
+}
+
+//查询用户口语即时请求状态。（匹配译员用）
++(void)interpreterStateWithuserId:(NSString *)user_id
+                          success:(void (^)(id responseObject))success
+                          failure:(void (^)(NSError *error))failure
+{
+    NSDictionary *dict = @{@"user_id":user_id};
+    [[APIClient sharedClient] POST:@"QuickTrans/interpreterState" parameters:dict  success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(error);
+    }];
+}
+//口语即时，发送远程推送APNS
++(void)sendRemoteNotificationsWithuseId:(NSString *)user_id
+                        WithsendMessage:(NSString *)send_message
+                       WithlanguageCatgory:(NSString *)language_catgory
+                          WithpayNumber:(NSString *)pay_number
+                           WithSenderID:(NSString *)sender_id
+                                success:(void (^)(id responseObject))success
+                                failure:(void (^)(NSError *error))failure
+{
+    NSDictionary *dict = @{@"user_id":user_id,
+                           @"sender_id":sender_id,
+                           @"send_message":send_message,
+                           @"language_catgory":language_catgory,
+                           @"pay_number":pay_number};
+    [[APIClient sharedClient] POST:@"Test/sendRemoteNotifications" parameters:dict  success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(error);
+    }];
+
+}
+//
++(void)userIdentity:(NSString *)userIdentity
+       userLanguage:(NSString *)userLanguage
+             userID:(NSString *)userID
+            success:(void (^)(id responseObject))success
+            failure:(void (^)(NSError *error))failure
+{
+    
+    NSDictionary *dict = @{@"user_identity":userIdentity,
+                           @"user_language":userLanguage,
+                           @"user_id":userID};
+    
+    [[APIClient sharedClient] POST:@"User/user_interpreter/" parameters:dict success:^(NSURLSessionDataTask *task, id responseObject) {
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        failure(error);
+    }];
+    
+}
+
+
+
+
+
+
+
+
 @end

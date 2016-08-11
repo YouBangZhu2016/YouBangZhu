@@ -13,6 +13,7 @@
 #import "AFNetworking.h"
 #import "WebAgent.h"
 #import "NSString+SZYKit.h"
+#import "YBZChooseTranslatorViewController.h"
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
 
@@ -110,7 +111,7 @@ static NSString * userStr;
                     NSDictionary *paramDict = @{@"code":self.enderCodeTextField.text,
                                                 @"user_phone":self.phoneTextField.text};
                     
-                    [manager POST:[NSString stringWithFormat:@"%@User/getValidateAndFamilyPhoneInfo",API_HOST] parameters:paramDict progress:^(NSProgress * _Nonnull uploadProgress) {
+                    [manager POST:[NSString stringWithFormat:@"%@User/getValidateAndFamilyPhoneInfo",API_HOST]  parameters:paramDict progress:^(NSProgress * _Nonnull uploadProgress) {
                         //do nothing
                     }
                           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -183,10 +184,10 @@ static NSString * userStr;
                             }];
                             
                             UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"注册成功" preferredStyle:UIAlertControllerStyleAlert];
-                            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"我知道了" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-
-
-                               // [self dismissViewControllerAnimated:YES completion:nil];
+                            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"我知道了" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+//                                [self dismissViewControllerAnimated:YES completion:nil];
+                                 YBZChooseTranslatorViewController *ChooseVC = [[YBZChooseTranslatorViewController alloc]init];
+                                [self.navigationController pushViewController:ChooseVC animated:YES];
                             }];
                             [alertVC addAction:okAction];
                             [self presentViewController:alertVC animated:YES completion:nil];

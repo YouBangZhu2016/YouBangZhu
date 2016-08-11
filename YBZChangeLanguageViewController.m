@@ -11,6 +11,9 @@
 #import "YBZChangeLanguageCell.h"
 #import "YBZChangeLanguageInfo.h"
 #import "YBZLanguageSearchResultViewController.h"
+#import "YBZWaitViewController.h"
+#import "WebAgent.h"
+#import "AFNetworking.h"
 
 @interface YBZChangeLanguageViewController () <UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 
@@ -101,6 +104,26 @@
     
     YBZChangeLanguageInfo *cell11 = [[YBZChangeLanguageInfo alloc]initWithTitle:@"Dansk" AndContent:@"丹麦文"];
     [self.cellArr addObject:cell11];
+    YBZChangeLanguageInfo *cell12 = [[YBZChangeLanguageInfo alloc]initWithTitle:@"MeiYu" AndContent:@"美国文"];
+    [self.cellArr addObject:cell12];
+    YBZChangeLanguageInfo *cell13 = [[YBZChangeLanguageInfo alloc]initWithTitle:@"TaiYu" AndContent:@"泰文"];
+    [self.cellArr addObject:cell13];
+    YBZChangeLanguageInfo *cell14 = [[YBZChangeLanguageInfo alloc]initWithTitle:@"ALaBoYu" AndContent:@"阿拉伯文"];
+    [self.cellArr addObject:cell14];
+    YBZChangeLanguageInfo *cell15 = [[YBZChangeLanguageInfo alloc]initWithTitle:@"XiLaYu" AndContent:@"希腊文"];
+    [self.cellArr addObject:cell15];
+    YBZChangeLanguageInfo *cell16 = [[YBZChangeLanguageInfo alloc]initWithTitle:@"HeLanYu" AndContent:@"荷兰文"];
+    [self.cellArr addObject:cell16];
+    YBZChangeLanguageInfo *cell17 = [[YBZChangeLanguageInfo alloc]initWithTitle:@"BoLanYu" AndContent:@"波兰文"];
+    [self.cellArr addObject:cell17];
+    YBZChangeLanguageInfo *cell18 = [[YBZChangeLanguageInfo alloc]initWithTitle:@"FenLanYu" AndContent:@"芬兰文"];
+    [self.cellArr addObject:cell18];
+    YBZChangeLanguageInfo *cell19 = [[YBZChangeLanguageInfo alloc]initWithTitle:@"JieKeYu" AndContent:@"捷克文"];
+    [self.cellArr addObject:cell19];
+    YBZChangeLanguageInfo *cell20 = [[YBZChangeLanguageInfo alloc]initWithTitle:@"RuiDianYu" AndContent:@"瑞典文"];
+    [self.cellArr addObject:cell20];
+    YBZChangeLanguageInfo *cell21 = [[YBZChangeLanguageInfo alloc]initWithTitle:@"XiongYaLiYu" AndContent:@"匈牙利文"];
+    [self.cellArr addObject:cell21];
     
 }
 
@@ -178,13 +201,13 @@
         
         self.cellView.dataSource = self;
         
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(aa)];
-        
-        tapGesture.delegate = self;
-        tapGesture.numberOfTapsRequired = 1;//单击
-        tapGesture.numberOfTouchesRequired = 1;//点按手指数
-        
-        [_cellView addGestureRecognizer:tapGesture];
+//        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(aa)];
+//        
+//        tapGesture.delegate = self;
+//        tapGesture.numberOfTapsRequired = 1;//单击
+//        tapGesture.numberOfTouchesRequired = 1;//点按手指数
+//        
+//        [_cellView addGestureRecognizer:tapGesture];
         
     }
     
@@ -247,6 +270,178 @@
     //    cell.contentLabel.text = model.content;
     
     return cell;
+}
+
+//封装－－－匹配译员
+-(void)matchTranslatorWithsenderID:(NSString *)senderID WithsendMessage:(NSString *)sendMessage WithlanguageCatgory:(NSString *)language WithpayNumber:(NSString *)payNumber{
+    
+    [WebAgent matchTranslatorWithchooseLanguage:language success:^(id responseObject) {
+        
+        //AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        NSData *data = [[NSData alloc]initWithData:responseObject];
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        
+        NSArray *arr = dic[@"data"];
+        NSLog(@"%@",arr);
+        
+        if (arr.count == 0) {
+            UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"抱歉，当前没有该语种的对应译员" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"我知道了" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                [self.navigationController popViewControllerAnimated:YES];
+            }];
+            [alertVC addAction:okAction];
+            [self presentViewController:alertVC animated:YES completion:nil];
+        }else{
+            
+            for (int i = 0 ; i< arr.count; i++) {
+                NSString *user_ID = arr[i];
+                [WebAgent sendRemoteNotificationsWithuseId:@"002" WithsendMessage:sendMessage WithlanguageCatgory:language WithpayNumber:payNumber WithSenderID:senderID success:^(id responseObject) {
+                    NSLog(@"发送远程推送成功!");
+                } failure:^(NSError *error) {
+                    NSLog(@"发送远程推送失败－－－>%@",error);
+                }];
+                
+            }
+        }
+        
+    } failure:^(NSError *error) {
+        NSLog(@"查询语种对应的译员信息失败－－－>%@",error);
+    }];
+    
+    YBZWaitViewController *waitVC = [[YBZWaitViewController alloc]init];
+    
+    [self.navigationController pushViewController:waitVC animated:YES];
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (indexPath.row == 0) {
+        
+    }
+    
+    if (indexPath.row == 1) {
+        NSLog(@"英文");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *selfID = [defaults objectForKey:@"user_id"];
+        [self matchTranslatorWithsenderID:selfID[@"user_id"] WithsendMessage:@"您收到一个关于英语的口语即时翻译请求" WithlanguageCatgory:@"YingYu" WithpayNumber:@"20"];
+    }
+    if (indexPath.row == 2) {
+        NSLog(@"法语");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *selfID = [defaults objectForKey:@"user_id"];
+        [self matchTranslatorWithsenderID:selfID[@"user_id"] WithsendMessage:@"您收到一个关于英语的口语即时翻译请求" WithlanguageCatgory:@"FaYu" WithpayNumber:@"20"];
+    }
+    if (indexPath.row == 3) {
+        NSLog(@"德语");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *selfID = [defaults objectForKey:@"user_id"];
+        [self matchTranslatorWithsenderID:selfID[@"user_id"] WithsendMessage:@"您收到一个关于英语的口语即时翻译请求" WithlanguageCatgory:@"DeYu" WithpayNumber:@"20"];
+    }
+    if (indexPath.row == 4) {
+        NSLog(@"日语");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *selfID = [defaults objectForKey:@"user_id"];
+        [self matchTranslatorWithsenderID:selfID[@"user_id"] WithsendMessage:@"您收到一个关于英语的口语即时翻译请求" WithlanguageCatgory:@"RiYu" WithpayNumber:@"20"];
+    }
+    if (indexPath.row == 5) {
+        NSLog(@"意大利语");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *selfID = [defaults objectForKey:@"user_id"];
+        [self matchTranslatorWithsenderID:selfID[@"user_id"] WithsendMessage:@"您收到一个关于英语的口语即时翻译请求" WithlanguageCatgory:@"YiDaLiYu" WithpayNumber:@"20"];
+    }
+    if (indexPath.row == 6) {
+        NSLog(@"西班牙");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *selfID = [defaults objectForKey:@"user_id"];
+        [self matchTranslatorWithsenderID:selfID[@"user_id"] WithsendMessage:@"您收到一个关于英语的口语即时翻译请求" WithlanguageCatgory:@"XiBanYa" WithpayNumber:@"20"];
+    }
+    if (indexPath.row == 7) {
+        NSLog(@"韩文");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *selfID = [defaults objectForKey:@"user_id"];
+        [self matchTranslatorWithsenderID:selfID[@"user_id"] WithsendMessage:@"您收到一个关于英语的口语即时翻译请求" WithlanguageCatgory:@"HanYu" WithpayNumber:@"20"];
+    }
+    if (indexPath.row == 8) {
+        NSLog(@"葡萄牙语");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *selfID = [defaults objectForKey:@"user_id"];
+        [self matchTranslatorWithsenderID:selfID[@"user_id"] WithsendMessage:@"您收到一个关于英语的口语即时翻译请求" WithlanguageCatgory:@"PuTaoYaYu" WithpayNumber:@"20"];
+    }
+    if (indexPath.row == 9) {
+        NSLog(@"俄语");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *selfID = [defaults objectForKey:@"user_id"];
+        [self matchTranslatorWithsenderID:selfID[@"user_id"] WithsendMessage:@"您收到一个关于英语的口语即时翻译请求" WithlanguageCatgory:@"EYu" WithpayNumber:@"20"];
+    }
+    if (indexPath.row == 10) {
+        NSLog(@"丹麦语");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *selfID = [defaults objectForKey:@"user_id"];
+        [self matchTranslatorWithsenderID:selfID[@"user_id"] WithsendMessage:@"您收到一个关于英语的口语即时翻译请求" WithlanguageCatgory:@"DanMaiYu" WithpayNumber:@"20"];
+    }
+    if (indexPath.row == 11) {
+        NSLog(@"美国语");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *selfID = [defaults objectForKey:@"user_id"];
+        [self matchTranslatorWithsenderID:selfID[@"user_id"] WithsendMessage:@"您收到一个关于英语的口语即时翻译请求" WithlanguageCatgory:@"MeiYu" WithpayNumber:@"20"];
+    }
+    if (indexPath.row == 12) {
+        NSLog(@"泰语");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *selfID = [defaults objectForKey:@"user_id"];
+        [self matchTranslatorWithsenderID:selfID[@"user_id"] WithsendMessage:@"您收到一个关于英语的口语即时翻译请求" WithlanguageCatgory:@"TaiYu" WithpayNumber:@"20"];
+    }
+    if (indexPath.row == 13) {
+        NSLog(@"阿拉伯语");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *selfID = [defaults objectForKey:@"user_id"];
+        [self matchTranslatorWithsenderID:selfID[@"user_id"] WithsendMessage:@"您收到一个关于英语的口语即时翻译请求" WithlanguageCatgory:@"ALaBoYu" WithpayNumber:@"20"];
+    }
+    if (indexPath.row == 14) {
+        NSLog(@"希腊语");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *selfID = [defaults objectForKey:@"user_id"];
+        [self matchTranslatorWithsenderID:selfID[@"user_id"] WithsendMessage:@"您收到一个关于英语的口语即时翻译请求" WithlanguageCatgory:@"XiLaYu" WithpayNumber:@"20"];
+    }
+    if (indexPath.row == 15) {
+        NSLog(@"荷兰语");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *selfID = [defaults objectForKey:@"user_id"];
+        [self matchTranslatorWithsenderID:selfID[@"user_id"] WithsendMessage:@"您收到一个关于英语的口语即时翻译请求" WithlanguageCatgory:@"HeLanYu" WithpayNumber:@"20"];
+    }
+    if (indexPath.row == 16) {
+        NSLog(@"波兰语");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *selfID = [defaults objectForKey:@"user_id"];
+        [self matchTranslatorWithsenderID:selfID[@"user_id"] WithsendMessage:@"您收到一个关于英语的口语即时翻译请求" WithlanguageCatgory:@"BoLanYu" WithpayNumber:@"20"];
+    }
+    if (indexPath.row == 17) {
+        NSLog(@"芬兰语");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *selfID = [defaults objectForKey:@"user_id"];
+        [self matchTranslatorWithsenderID:selfID[@"user_id"] WithsendMessage:@"您收到一个关于英语的口语即时翻译请求" WithlanguageCatgory:@"FenLanYu" WithpayNumber:@"20"];
+    }
+    if (indexPath.row == 18) {
+        NSLog(@"捷克语");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *selfID = [defaults objectForKey:@"user_id"];
+        [self matchTranslatorWithsenderID:selfID[@"user_id"] WithsendMessage:@"您收到一个关于英语的口语即时翻译请求" WithlanguageCatgory:@"JieKeYu" WithpayNumber:@"20"];
+    }
+    if (indexPath.row == 19) {
+        NSLog(@"瑞典语");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *selfID = [defaults objectForKey:@"user_id"];
+        [self matchTranslatorWithsenderID:selfID[@"user_id"] WithsendMessage:@"您收到一个关于英语的口语即时翻译请求" WithlanguageCatgory:@"RuiDianYu" WithpayNumber:@"20"];
+    }
+    if (indexPath.row == 20) {
+        NSLog(@"匈牙利语");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSDictionary *selfID = [defaults objectForKey:@"user_id"];
+        [self matchTranslatorWithsenderID:selfID[@"user_id"] WithsendMessage:@"您收到一个关于英语的口语即时翻译请求" WithlanguageCatgory:@"XiongYaLiYu" WithpayNumber:@"20"];
+    }
+
+    
 }
 
 

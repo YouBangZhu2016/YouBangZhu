@@ -15,6 +15,8 @@
 #import "YBZTranslationController.h"
 #import "WebAgent.h"
 #import "APIClient.h"
+#import "YBZLoginViewController.h"
+#import "YBZBaseNaviController.h"
 @interface UserSetViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *usersetTabView;
 @property (nonatomic , strong) NSDictionary *dataDic;
@@ -32,7 +34,14 @@
     self.usersetTabView.dataSource = self;
     NSUserDefaults *userinfo = [NSUserDefaults standardUserDefaults];
     NSDictionary *user_id = [userinfo dictionaryForKey:@"user_id"];
-
+    if(user_id[@"user_id"] == NULL)
+    {
+        YBZLoginViewController *logVC = [[YBZLoginViewController alloc]initWithTitle:@"登录"];
+        YBZBaseNaviController *nav = [[YBZBaseNaviController alloc]initWithRootViewController:logVC];
+        logVC.view.backgroundColor = [UIColor whiteColor];
+        [self presentViewController:nav animated:YES completion:nil];
+    }
+    else{
     [WebAgent userGetInfo:user_id[@"user_id"] success:^(id responseObject) {
         NSData *data = [[NSData alloc]initWithData:responseObject];
         self.dataDic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
@@ -43,6 +52,7 @@
     } failure:^(NSError *error) {
         NSLog(@"cuole");
     }];
+    }
     self.navigationItem.title = @"设置";
      [[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
     [self.view addSubview:self.usersetTabView];

@@ -36,7 +36,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 
@@ -58,12 +57,12 @@
     self.levelLabel.frame = CGRectMake(CGRectGetWidth(self.cellBottomView.frame) - 109, 8.5, 60, 12);
     //_levelLabel.backgroundColor = [UIColor yellowColor];
     [_levelLabel setTextColor:[UIColor whiteColor]];
-
+    
     
     self.stateLabel.frame = CGRectMake(CGRectGetWidth(self.cellBottomView.frame) - 47, 8.5, 36, 12);
     //_stateLabel.backgroundColor = [UIColor yellowColor];
     [_stateLabel setTextColor:[UIColor whiteColor]];
-
+    
     
     self.contentLabel.frame = CGRectMake(11, CGRectGetMaxY(self.titleLabel.frame) + 2, CGRectGetWidth(self.cellBottomView.frame) - 44 , 32);
     //_contentLabel.backgroundColor = [UIColor yellowColor];
@@ -71,17 +70,17 @@
     _contentLabel.numberOfLines = 0;
     
     
-
+    
     self.timeLabel.frame = CGRectMake(11, CGRectGetMaxY(self.contentLabel.frame) + 2, UIScreenWidth / 2 - 29 , 15);
     //_timeLabel.backgroundColor = [UIColor yellowColor];
     [_timeLabel setTextColor:[UIColor whiteColor]];
- 
+    
     
     self.payLabel.frame = CGRectMake(CGRectGetWidth(self.cellBottomView.frame) / 2, CGRectGetMaxY(self.contentLabel.frame) + 2, CGRectGetWidth(self.cellBottomView.frame) / 2 - 11, 15);
     //_payLabel.backgroundColor = [UIColor greenColor];
     [_payLabel setTextColor:[UIColor whiteColor]];
-
-//
+    
+    //
     self.allInfoBtn.frame = CGRectMake(CGRectGetWidth(self.cellBottomView.frame) - 31, CGRectGetMaxY(self.titleLabel.frame) + 2, 20, 32);
     //_allInfoBtn.backgroundColor = [UIColor greenColor];
     [_allInfoBtn setImage:[UIImage imageNamed:@"箭头"] forState:UIControlStateNormal];

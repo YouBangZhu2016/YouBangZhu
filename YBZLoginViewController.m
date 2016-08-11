@@ -17,6 +17,8 @@
 #import "PrefixHeader.pch"
 #import "AFNetworking.h"
 #import "WebAgent.h"
+#import "JPUSHService.h"
+
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
 
@@ -36,6 +38,7 @@
 @property(nonatomic,strong) UIImageView  *pswerImageView;
 @property(nonatomic,strong) AFViewShaker *userShaker;
 @property(nonatomic,strong) AFViewShaker *pswerShaker;
+@property(nonatomic,assign) NSString* isLogin;
 @end
 
 @implementation YBZLoginViewController
@@ -133,17 +136,70 @@
                                 NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
                                 //------------------
                                   [userDefaults setObject:useridDic forKey:@"user_id"];
-                                NSUserDefaults *userinfo = [NSUserDefaults standardUserDefaults];
-                                NSDictionary *user_idDic = [userinfo dictionaryForKey:@"user_id"];
-                                [WebAgent userId:user_idDic[@"user_id"] success:^(id responseObject) {
+//                                NSUserDefaults *userinfo = [NSUserDefaults standardUserDefaults];
+//                                NSDictionary *user_idDic = [userinfo dictionaryForKey:@"user_id"];
+//                                [WebAgent userId:user_idDic[@"user_id"] success:^(id responseObject) {
+//                                    NSData *data = [[NSData alloc]initWithData:responseObject];
+//                                    NSString *accountSafe = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+//                                    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//                                    [userDefaults setObject:accountSafe forKey:@"accountSafe"];
+//                                    NSLog(@"%@",accountSafe);
+//                                    
+//                                    
+//
+//                                    
+//                                    
+//                                } failure:^(NSError *error) {
+//                                    //
+//                                }];
+//                                
+//                                NSUserDefaults *userdefault = [NSUserDefaults standardUserDefaults];
+//                                NSDictionary *userID = [userdefault objectForKey:@"user_id"];
+//                                
+//                                
+//                                
+//                                if (userID != nil && ![userID[@"user_id"] isEqualToString:@""])
+//                                {
+//                                    NSLog(@"aaddddd");
+//                                    [JPUSHService setTags:nil alias:userID[@"user_id"] fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias)
+//                                    {
+//                                        
+//                                        NSLog(@"isrescode----%d, itags------%@,ialias--------%@",iResCode,iTags,iAlias);
+//                                    }];
+//                                }else
+//                                {
+//                                    NSLog(@"aaaa");
+//                                }
+                                NSUserDefaults *userdefault = [NSUserDefaults standardUserDefaults];
+                                NSDictionary *userID = [userdefault objectForKey:@"user_id"];
+
+                                [WebAgent userLoginState:userID[@"user_id"] success:^(id responseObject) {
                                     NSData *data = [[NSData alloc]initWithData:responseObject];
-                                    NSString *accountSafe = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-                                    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-                                    [userDefaults setObject:accountSafe forKey:@"accountSafe"];
-                                    NSLog(@"%@",accountSafe);
-                                } failure:^(NSError *error) {
-                                    //
-                                }];
+                                    NSDictionary *str= [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                                    
+                                    self.isLogin = str[@"state"];
+                                    NSLog(@"%@",self.isLogin);
+                                    if ([self.isLogin  isEqual: @"1"])
+                                    {
+                                        [JPUSHService setTags:nil alias:userID[@"user_id"] fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias)
+                                        {
+                                         
+                                        NSLog(@"isrescode----%d, itags------%@,ialias--------%@",iResCode,iTags,iAlias);
+                                                                             }];
+                                    
+                                    
+                                    }
+                                    
+                                }
+                                                 failure:^(NSError *error) {
+                                                     NSLog(@"原本222222222的错误%@",error);
+                                                 }];
+//                                [JPUSHService setTags:nil alias:userID[@"user_id"] fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias)
+//                                 {
+//                                     
+//                                     NSLog(@"isrescode----%d, itags------%@,ialias--------%@",iResCode,iTags,iAlias);
+//                                 }];
+
                                 
                                 //------------------
                                 [userDefaults setObject:useridDic forKey:@"user_id"];

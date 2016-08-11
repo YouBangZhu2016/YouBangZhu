@@ -362,7 +362,7 @@
         {
             vHeader = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:header];
             UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 8, self.view.frame.size.width, 40)];
-            label.backgroundColor = [UIColor lightGrayColor];
+            label.backgroundColor = [UIColor colorWithRed:239.0f/255.0f green:238.0f/255.0f blue:244.0f/255.0f alpha:1];
             [vHeader.contentView addSubview:label];
         }
     }
@@ -370,8 +370,8 @@
         if (!vHeader)
         {
             vHeader = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:header];
-            UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake( 0 , - 18, self.view.frame.size.width, 64)];
-            label.backgroundColor = [UIColor lightGrayColor];
+            UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake( 0 , - 18, self.view.frame.size.width, 46 * 5 / 4)];
+            label.backgroundColor = [UIColor colorWithRed:239.0f/255.0f green:238.0f/255.0f blue:244.0f/255.0f alpha:1];
             [vHeader.contentView addSubview:label];
         }
     }
@@ -386,7 +386,7 @@
         return 46;
     }
     else{
-        return 46;
+        return 46 * 4 / 5;
     }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

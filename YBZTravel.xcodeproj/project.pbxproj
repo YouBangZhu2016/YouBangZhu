@@ -36,7 +36,6 @@
 		1E7056071D5324F400A000F5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7056061D5324F400A000F5 /* Security.framework */; };
 		1E7056091D53250A00A000F5 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7056081D53250A00A000F5 /* AdSupport.framework */; };
 		1E70560B1D5326A400A000F5 /* PushConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E70560A1D5326A400A000F5 /* PushConfig.plist */; };
-		1E7056111D596BE200A000F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E7056101D596BE200A000F5 /* Assets.xcassets */; };
 		1ED863081D2F39DD00529094 /* AFViewShaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED862EC1D2F39DD00529094 /* AFViewShaker.m */; };
 		1ED863091D2F39DD00529094 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1ED862EE1D2F39DD00529094 /* Info.plist */; };
 		1ED8630A1D2F39DD00529094 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED862F01D2F39DD00529094 /* MASCompositeConstraint.m */; };
@@ -118,6 +117,7 @@
 		A03ED0571D2DE20800BD9C0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A03ED0561D2DE20800BD9C0A /* main.m */; };
 		A03ED05A1D2DE20800BD9C0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A03ED0591D2DE20800BD9C0A /* AppDelegate.m */; };
 		A03ED0601D2DE20800BD9C0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03ED05E1D2DE20800BD9C0A /* Main.storyboard */; };
+		A03ED0621D2DE20800BD9C0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A03ED0611D2DE20800BD9C0A /* Assets.xcassets */; };
 		A03ED0651D2DE20800BD9C0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A03ED0631D2DE20800BD9C0A /* LaunchScreen.storyboard */; };
 		A03ED0701D2DE20800BD9C0A /* YBZTravelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A03ED06F1D2DE20800BD9C0A /* YBZTravelTests.m */; };
 		A03ED07B1D2DE20800BD9C0A /* YBZTravelUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A03ED07A1D2DE20800BD9C0A /* YBZTravelUITests.m */; };
@@ -139,6 +139,9 @@
 		A03ED0E51D2E2B2300BD9C0A /* YBZTranslaterSelectLanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A03ED0E41D2E2B2300BD9C0A /* YBZTranslaterSelectLanguageViewController.m */; };
 		A03ED0F31D2E3EF500BD9C0A /* YBZProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A03ED0F21D2E3EF500BD9C0A /* YBZProductListViewController.m */; };
 		A03ED0F61D2E3F1700BD9C0A /* YBZProductDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A03ED0F51D2E3F1700BD9C0A /* YBZProductDetailInfoViewController.m */; };
+		A04924291D55987100BE1DCF /* YBZChooseTranslatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04924261D55987100BE1DCF /* YBZChooseTranslatorViewController.m */; };
+		A049242A1D55987100BE1DCF /* YBZOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A04924281D55987100BE1DCF /* YBZOtherViewController.m */; };
+		A049242D1D55A4A900BE1DCF /* YBZWaitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A049242C1D55A4A900BE1DCF /* YBZWaitViewController.m */; };
 		A0532C761D38C32200FC1AB1 /* UserSetoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0532C6F1D38C32200FC1AB1 /* UserSetoutTableViewCell.m */; };
 		A0532C771D38C32200FC1AB1 /* UserSetoutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0532C701D38C32200FC1AB1 /* UserSetoutTableViewCell.xib */; };
 		A0532C781D38C32200FC1AB1 /* UserSetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A0532C721D38C32200FC1AB1 /* UserSetTableViewCell.m */; };
@@ -255,7 +258,6 @@
 		1E7056061D5324F400A000F5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1E7056081D53250A00A000F5 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		1E70560A1D5326A400A000F5 /* PushConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PushConfig.plist; sourceTree = "<group>"; };
-		1E7056101D596BE200A000F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = YBZTravel/Assets.xcassets; sourceTree = "<group>"; };
 		1ED862EB1D2F39DD00529094 /* AFViewShaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFViewShaker.h; sourceTree = "<group>"; };
 		1ED862EC1D2F39DD00529094 /* AFViewShaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFViewShaker.m; sourceTree = "<group>"; };
 		1ED862EE1D2F39DD00529094 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 		A03ED0581D2DE20800BD9C0A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = YBZTravel/AppDelegate.h; sourceTree = "<group>"; };
 		A03ED0591D2DE20800BD9C0A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = YBZTravel/AppDelegate.m; sourceTree = "<group>"; };
 		A03ED05F1D2DE20800BD9C0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A03ED0611D2DE20800BD9C0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A03ED0641D2DE20800BD9C0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A03ED0661D2DE20800BD9C0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A03ED06B1D2DE20800BD9C0A /* YBZTravelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YBZTravelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -433,6 +436,12 @@
 		A03ED0F21D2E3EF500BD9C0A /* YBZProductListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZProductListViewController.m; sourceTree = "<group>"; };
 		A03ED0F41D2E3F1700BD9C0A /* YBZProductDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZProductDetailInfoViewController.h; sourceTree = "<group>"; };
 		A03ED0F51D2E3F1700BD9C0A /* YBZProductDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZProductDetailInfoViewController.m; sourceTree = "<group>"; };
+		A04924251D55987100BE1DCF /* YBZChooseTranslatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZChooseTranslatorViewController.h; sourceTree = "<group>"; };
+		A04924261D55987100BE1DCF /* YBZChooseTranslatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZChooseTranslatorViewController.m; sourceTree = "<group>"; };
+		A04924271D55987100BE1DCF /* YBZOtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZOtherViewController.h; sourceTree = "<group>"; };
+		A04924281D55987100BE1DCF /* YBZOtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZOtherViewController.m; sourceTree = "<group>"; };
+		A049242B1D55A4A900BE1DCF /* YBZWaitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZWaitViewController.h; sourceTree = "<group>"; };
+		A049242C1D55A4A900BE1DCF /* YBZWaitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZWaitViewController.m; sourceTree = "<group>"; };
 		A0532C6E1D38C32200FC1AB1 /* UserSetoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserSetoutTableViewCell.h; sourceTree = "<group>"; };
 		A0532C6F1D38C32200FC1AB1 /* UserSetoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserSetoutTableViewCell.m; sourceTree = "<group>"; };
 		A0532C701D38C32200FC1AB1 /* UserSetoutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserSetoutTableViewCell.xib; sourceTree = "<group>"; };
@@ -830,10 +839,9 @@
 				1B0513621D3F5DAC00F05C9D /* AFNetworking */,
 				A03ED09B1D2DE42000BD9C0A /* Login&Register */,
 				A03ED0971D2DE3B700BD9C0A /* Main */,
-				A03ED08C1D2DE32000BD9C0A /* Translation */,
 				A03ED08B1D2DE31200BD9C0A /* FreeTravel */,
+				A03ED08C1D2DE32000BD9C0A /* Translation */,
 				A03ED08D1D2DE33700BD9C0A /* User */,
-				1E7056101D596BE200A000F5 /* Assets.xcassets */,
 				A03ED0891D2DE2F600BD9C0A /* Other */,
 				1ED862E91D2F39DD00529094 /* ThirdTools */,
 				A03ED0541D2DE20700BD9C0A /* YBZTravel */,
@@ -857,6 +865,7 @@
 		A03ED0541D2DE20700BD9C0A /* YBZTravel */ = {
 			isa = PBXGroup;
 			children = (
+				A03ED0611D2DE20800BD9C0A /* Assets.xcassets */,
 			);
 			path = YBZTravel;
 			sourceTree = "<group>";
@@ -986,6 +995,8 @@
 				A03ED0C11D2DF1BE00BD9C0A /* YBZInterpretViewController.m */,
 				A03ED0C61D2DF7E700BD9C0A /* YBZChangeLanguageViewController.h */,
 				A03ED0C71D2DF7E700BD9C0A /* YBZChangeLanguageViewController.m */,
+				A049242B1D55A4A900BE1DCF /* YBZWaitViewController.h */,
+				A049242C1D55A4A900BE1DCF /* YBZWaitViewController.m */,
 				1ED863D91D349ABA00529094 /* YBZChangeLanguageCell.h */,
 				1ED863DA1D349ABA00529094 /* YBZChangeLanguageCell.m */,
 				1ED863DC1D34D67500529094 /* YBZChangeLanguageInfo.h */,
@@ -1100,6 +1111,10 @@
 		A03ED09C1D2DE43000BD9C0A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A04924251D55987100BE1DCF /* YBZChooseTranslatorViewController.h */,
+				A04924261D55987100BE1DCF /* YBZChooseTranslatorViewController.m */,
+				A04924271D55987100BE1DCF /* YBZOtherViewController.h */,
+				A04924281D55987100BE1DCF /* YBZOtherViewController.m */,
 				1ED863E31D38868500529094 /* YBZAreaCodeViewController.m */,
 				1ED863E41D38868500529094 /* YBZSingleCodeCell.m */,
 				1ED863E51D38868500529094 /* YBZAreaCodeViewController.h */,
@@ -1384,7 +1399,6 @@
 				1E70560B1D5326A400A000F5 /* PushConfig.plist in Resources */,
 				A0532CCD1D38D4FE00FC1AB1 /* UserTableViewCell.xib in Resources */,
 				A0552ED11D3A2C8C00E04D7A /* LocMessageInfoCell.xib in Resources */,
-				1E7056111D596BE200A000F5 /* Assets.xcassets in Resources */,
 				A0532C881D38C3F600FC1AB1 /* AccountTableViewCell.xib in Resources */,
 				A0532C851D38C3F600FC1AB1 /* AccountAndSafeOtherTableViewCell.xib in Resources */,
 				1ED8631C1D2F839F00529094 /* YBZPopularViewCell.xib in Resources */,
@@ -1395,6 +1409,7 @@
 				A0552ED81D3A2C8C00E04D7A /* SelectedMessageInfoCell.xib in Resources */,
 				A0532CC51D38D03E00FC1AB1 /* star_yellow.png in Resources */,
 				A012EDAE1D5099E000144BAD /* RCConfig.plist in Resources */,
+				A03ED0621D2DE20800BD9C0A /* Assets.xcassets in Resources */,
 				1ED8636B1D3347F500529094 /* SYTableFooterView.xib in Resources */,
 				A0532CC41D38D03E00FC1AB1 /* star_gray.png in Resources */,
 				1B05138E1D3F5DAC00F05C9D /* LICENSE in Resources */,
@@ -1502,9 +1517,11 @@
 				1ED8630D1D2F39DD00529094 /* MASLayoutConstraint.m in Sources */,
 				A012EDFE1D509CAB00144BAD /* QuickTransViewController.m in Sources */,
 				A03ED0D21D2E089C00BD9C0A /* YBZUserOrderViewController.m in Sources */,
+				A04924291D55987100BE1DCF /* YBZChooseTranslatorViewController.m in Sources */,
 				A03ED0CF1D2E088300BD9C0A /* YBZUserInfoViewController.m in Sources */,
 				1ED863D21D3390F000529094 /* MJRefreshBaseView.m in Sources */,
 				A012EE021D509CAB00144BAD /* BaseTableView.m in Sources */,
+				A049242A1D55987100BE1DCF /* YBZOtherViewController.m in Sources */,
 				A012EE041D509CAB00144BAD /* ChatModel.m in Sources */,
 				A0532CBA1D38CF8E00FC1AB1 /* PeoPle.m in Sources */,
 				A0552EB31D3A163C00E04D7A /* NIChengViewController.m in Sources */,
@@ -1540,6 +1557,7 @@
 				A03ED0E21D2E2AA400BD9C0A /* YBZFindKeyViewController.m in Sources */,
 				1B0513971D3F5DAC00F05C9D /* UIRefreshControl+AFNetworking.m in Sources */,
 				1ED863E91D38868500529094 /* YBZAreaCodeViewController.m in Sources */,
+				A049242D1D55A4A900BE1DCF /* YBZWaitViewController.m in Sources */,
 				1B7B67341D41BFBE00346609 /* APIClient.m in Sources */,
 				A012EDFD1D509CAB00144BAD /* FreeTransViewController.m in Sources */,
 				A0552ED71D3A2C8C00E04D7A /* SelectedMessageInfoCell.m in Sources */,
