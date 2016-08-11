@@ -39,7 +39,9 @@
 
 
 @property (nonatomic, strong) UIButton *userBtn;
+@property (nonatomic, strong) UIImageView *userBtnImageView;
 @property (nonatomic, strong) UIButton *translaterBtn;
+@property (nonatomic, strong) UIImageView *translaterBtnImageView;
 @property (nonatomic, strong) UIButton *freeTransBtn;
 @property (nonatomic, strong) UIButton *interpretBtn;
 @property (nonatomic, strong) UIButton *customMadeBtn;
@@ -99,7 +101,9 @@
     
     
     [self.bottomView addSubview:self.userBtn];
+    [self.userBtn addSubview:self.userBtnImageView];
     [self.bottomView addSubview:self.translaterBtn];
+    [self.translaterBtn addSubview:self.translaterBtnImageView];
     
     [self.bottomView addSubview:self.freeTransBtn];
     [self.bottomView addSubview:self.freeTransLabel];
@@ -330,20 +334,20 @@
 -(void)userIdentifierClick{
     
     self.userBtn.selected = YES;
-    self.userBtn.backgroundColor = [UIColor orangeColor];
+    self.userBtn.backgroundColor = [UIColor colorWithRed:255/255.0 green:243/255.0 blue:202/255.0 alpha:1];
     
     self.translaterBtn.selected = NO;
-    self.translaterBtn.backgroundColor = [UIColor grayColor];
+    self.translaterBtn.backgroundColor = [UIColor colorWithRed:226/255.0 green:226/255.0 blue:226/255.0 alpha:1];
     
 }
 
 -(void)interpretIdentifierClick{
     
     self.userBtn.selected = NO;
-    self.userBtn.backgroundColor = [UIColor grayColor];
+    self.userBtn.backgroundColor = [UIColor colorWithRed:226/255.0 green:226/255.0 blue:226/255.0 alpha:1];
     
     self.translaterBtn.selected = YES;
-    self.translaterBtn.backgroundColor = [UIColor orangeColor];
+    self.translaterBtn.backgroundColor = [UIColor colorWithRed:255/255.0 green:243/255.0 blue:202/255.0 alpha:1];
     
     
 }
@@ -432,12 +436,12 @@
     
     if (!_userBtn) {
         _userBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_userBtn setTitle:@"用户" forState:UIControlStateNormal];
+        //[_userBtn setTitle:@"用户" forState:UIControlStateNormal];
         
         if (_isUser) {
-            _userBtn.backgroundColor = [UIColor orangeColor];
+            _userBtn.backgroundColor = [UIColor colorWithRed:255/255.0 green:243/255.0 blue:202/255.0 alpha:1];
         }else{
-            _userBtn.backgroundColor = [UIColor grayColor];
+            _userBtn.backgroundColor = [UIColor colorWithRed:226/255.0 green:226/255.0 blue:226/255.0 alpha:1];
         }
         _userBtn.frame = CGRectMake(-25, CGRectGetMaxY(self.newsView.frame) + 15, UIScreenWidth / 2 + 15, 32);
         
@@ -447,24 +451,43 @@
     return _userBtn;
 }
 
+- (UIImageView *)userBtnImageView{
+    
+    if (!_userBtnImageView) {
+        _userBtnImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"用户界面 用户"]];
+        _userBtnImageView.frame = CGRectMake(UIScreenWidth * 0.33, - (UITranslationBtnSize - 32) / 2, UITranslationBtnSize, UITranslationBtnSize);
+        //_userBtnImageView.backgroundColor = [UIColor redColor];
+    }
+    return _userBtnImageView;
+}
 
 //翻译人员身份按钮
 -(UIButton *)translaterBtn{
     
     if (!_translaterBtn) {
         _translaterBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_translaterBtn setTitle:@"译员" forState:UIControlStateNormal];
+        //[_translaterBtn setTitle:@"译员" forState:UIControlStateNormal];
         
         if (_isUser) {
-            _translaterBtn.backgroundColor = [UIColor grayColor];
+            _translaterBtn.backgroundColor = [UIColor colorWithRed:226/255.0 green:226/255.0 blue:226/255.0 alpha:1];
         }else{
-            _translaterBtn.backgroundColor = [UIColor orangeColor];
+            _translaterBtn.backgroundColor = [UIColor colorWithRed:255/255.0 green:243/255.0 blue:202/255.0 alpha:1];
         }
         _translaterBtn.frame = CGRectMake(CGRectGetMaxX(self.userBtn.frame) + 20, CGRectGetMaxY(self.newsView.frame) + 15, UIScreenWidth / 2 + 25, 32);
         [_translaterBtn addTarget:self action:@selector(interpretIdentifierClick) forControlEvents:UIControlEventTouchUpInside];
         _translaterBtn.layer.cornerRadius = 16;
     }
     return _translaterBtn;
+}
+
+- (UIImageView *)translaterBtnImageView{
+    
+    if (!_translaterBtnImageView) {
+        _translaterBtnImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"用户界面 译员"]];
+        _translaterBtnImageView.frame = CGRectMake(CGRectGetMinX(self.translaterBtn.frame) - UIScreenWidth * 0.315 - UITranslationBtnSize, - (UITranslationBtnSize - 32) / 2, UITranslationBtnSize, UITranslationBtnSize);
+        //_userBtnImageView.backgroundColor = [UIColor redColor];
+    }
+    return _translaterBtnImageView;
 }
 
 -(UIButton *)freeTransBtn{

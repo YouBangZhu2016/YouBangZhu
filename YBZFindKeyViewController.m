@@ -166,7 +166,7 @@
                     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
                     NSDictionary *paramdict = @{@"code":self.enderCodeTextField.text,
                                                 @"user_phone":self.userTextField.text};
-                    [manager POST:@"http://127.0.0.1/TravelHelper/index.php/Home/User/getValidateAndFamilyPhoneInfo" parameters:paramdict progress:^(NSProgress * _Nonnull uploadProgress) {
+                    [manager POST:[NSString stringWithFormat:@"%@User/getValidateAndFamilyPhoneInfo",API_HOST] parameters:paramdict progress:^(NSProgress * _Nonnull uploadProgress) {
                         //do nothing
                     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                         //成功

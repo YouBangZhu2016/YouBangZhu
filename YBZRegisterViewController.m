@@ -110,7 +110,7 @@ static NSString * userStr;
                     NSDictionary *paramDict = @{@"code":self.enderCodeTextField.text,
                                                 @"user_phone":self.phoneTextField.text};
                     
-                    [manager POST:@"http://127.0.0.1/TravelHelper/index.php/Home/User/getValidateAndFamilyPhoneInfo"parameters:paramDict progress:^(NSProgress * _Nonnull uploadProgress) {
+                    [manager POST:[NSString stringWithFormat:@"%@User/getValidateAndFamilyPhoneInfo",API_HOST] parameters:paramDict progress:^(NSProgress * _Nonnull uploadProgress) {
                         //do nothing
                     }
                           success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

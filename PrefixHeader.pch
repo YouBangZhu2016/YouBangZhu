@@ -53,4 +53,10 @@
 #define UITranslationBtnMargin UIScreenWidth * 22 / 320
 #define UITranslationBtnSize UIScreenWidth * 42 / 320
 //#define UICountryBtnWidth
+
+
+//#define API_HOST @"http://10.1.40.237/TravelHelper/index.php/Home/"
+#define API_HOST @"http://127.0.0.1/TravelHelper/index.php/Home/"
+
+
 #endif /* PrefixHeader_pch */
