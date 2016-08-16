@@ -132,5 +132,23 @@ feedbackinfo_time:(NSString *)feedbackinfo_time
             success:(void (^)(id responseObject))success
             failure:(void (^)(NSError *error))failure;
 
+//*******************************************************************//
+//发布悬赏
++(void)sendRewardRewardID:(NSString *)rewardID
+              rewardTitle:(NSString *)rewardTitle
+               rewardText:(NSString *)rewardText
+                rewardUrl:(NSString *)rewardUrl
+              rewardMoney:(NSString *)rewardMoney
+                  success:(void (^)(id responseObject))success
+                  failure:(void (^)(NSError *error))failure;
+
+//获取热门标签
++(void)getLabelInfo:(NSString *)labelId
+            success:(void (^)(id responseObject))success
+            failure:(void (^)(NSError *error))failure;
+
+
+
+
 
 @end

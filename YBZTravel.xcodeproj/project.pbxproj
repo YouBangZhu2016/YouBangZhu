@@ -27,6 +27,27 @@
 		1B610CE41D47590A00541B6B /* EmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B610CE31D47590A00541B6B /* EmailViewController.m */; };
 		1B7B67341D41BFBE00346609 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7B67331D41BFBE00346609 /* APIClient.m */; };
 		1B7B673A1D41C0A900346609 /* WebAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B7B67391D41C0A900346609 /* WebAgent.m */; };
+		1B9502A91D61577E000D219D /* YBZMyRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B95029A1D61577E000D219D /* YBZMyRewardViewController.m */; };
+		1B9502AA1D61577E000D219D /* YBZSendRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B95029C1D61577E000D219D /* YBZSendRewardViewController.m */; };
+		1B9502AB1D61577E000D219D /* SelectPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B95029E1D61577E000D219D /* SelectPhoto.m */; };
+		1B9502AC1D61577E000D219D /* YBZRewardChooseLanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9502A01D61577E000D219D /* YBZRewardChooseLanguageViewController.m */; };
+		1B9502AD1D61577E000D219D /* YBZTagClassifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9502A21D61577E000D219D /* YBZTagClassifyViewController.m */; };
+		1B9502AE1D61577E000D219D /* YBZChoosePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9502A41D61577E000D219D /* YBZChoosePhotoViewController.m */; };
+		1B9502AF1D61577E000D219D /* YBZRewardMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9502A61D61577E000D219D /* YBZRewardMoneyViewController.m */; };
+		1B9502B01D61577E000D219D /* YBZDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9502A81D61577E000D219D /* YBZDetailViewController.m */; };
+		1B9502B71D615796000D219D /* YBZRewardHallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9502B21D615796000D219D /* YBZRewardHallViewController.m */; };
+		1B9502B81D615796000D219D /* YBZTranslatorDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9502B41D615796000D219D /* YBZTranslatorDetailViewController.m */; };
+		1B9502B91D615796000D219D /* YBZTranslatorAnswerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9502B61D615796000D219D /* YBZTranslatorAnswerViewController.m */; };
+		1B9502BE1D6157D8000D219D /* BottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9502BB1D6157D8000D219D /* BottomView.m */; };
+		1B9502BF1D6157D8000D219D /* TopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9502BD1D6157D8000D219D /* TopView.m */; };
+		1B9502C41D615C7F000D219D /* Infor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9502C11D615C7F000D219D /* Infor.m */; };
+		1B9502C51D615C7F000D219D /* CellInfor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9502C31D615C7F000D219D /* CellInfor.m */; };
+		1B9502C91D615C9F000D219D /* LanguageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9502C71D615C9F000D219D /* LanguageCell.m */; };
+		1B9502CA1D615C9F000D219D /* LanguageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B9502C81D615C9F000D219D /* LanguageCell.xib */; };
+		1B9502CD1D615EA1000D219D /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9502CC1D615EA1000D219D /* Model.m */; };
+		1B9502D41D615EB4000D219D /* Btn_TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9502CF1D615EB4000D219D /* Btn_TableView.m */; };
+		1B9502D51D615EB4000D219D /* ExpandTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9502D11D615EB4000D219D /* ExpandTableVC.m */; };
+		1B9502D61D615EB4000D219D /* ExpandCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9502D31D615EB4000D219D /* ExpandCell.m */; };
 		1B96DA411D435ADC00FD5BA6 /* NSString+SZYKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B96DA3F1D435ADC00FD5BA6 /* NSString+SZYKit.m */; };
 		1E70550A1D517F3D00A000F5 /* YBZFreeTranslationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7055071D517F3D00A000F5 /* YBZFreeTranslationInfo.m */; };
 		1E70550B1D517F3D00A000F5 /* YBZFreeTranslationViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7055091D517F3D00A000F5 /* YBZFreeTranslationViewCell.m */; };
@@ -244,6 +265,47 @@
 		1B7B67331D41BFBE00346609 /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
 		1B7B67381D41C09B00346609 /* WebAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebAgent.h; sourceTree = "<group>"; };
 		1B7B67391D41C0A900346609 /* WebAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebAgent.m; sourceTree = "<group>"; };
+		1B9502991D61577E000D219D /* YBZMyRewardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZMyRewardViewController.h; sourceTree = "<group>"; };
+		1B95029A1D61577E000D219D /* YBZMyRewardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZMyRewardViewController.m; sourceTree = "<group>"; };
+		1B95029B1D61577E000D219D /* YBZSendRewardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZSendRewardViewController.h; sourceTree = "<group>"; };
+		1B95029C1D61577E000D219D /* YBZSendRewardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZSendRewardViewController.m; sourceTree = "<group>"; };
+		1B95029D1D61577E000D219D /* SelectPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPhoto.h; sourceTree = "<group>"; };
+		1B95029E1D61577E000D219D /* SelectPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPhoto.m; sourceTree = "<group>"; };
+		1B95029F1D61577E000D219D /* YBZRewardChooseLanguageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZRewardChooseLanguageViewController.h; sourceTree = "<group>"; };
+		1B9502A01D61577E000D219D /* YBZRewardChooseLanguageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZRewardChooseLanguageViewController.m; sourceTree = "<group>"; };
+		1B9502A11D61577E000D219D /* YBZTagClassifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZTagClassifyViewController.h; sourceTree = "<group>"; };
+		1B9502A21D61577E000D219D /* YBZTagClassifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZTagClassifyViewController.m; sourceTree = "<group>"; };
+		1B9502A31D61577E000D219D /* YBZChoosePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZChoosePhotoViewController.h; sourceTree = "<group>"; };
+		1B9502A41D61577E000D219D /* YBZChoosePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZChoosePhotoViewController.m; sourceTree = "<group>"; };
+		1B9502A51D61577E000D219D /* YBZRewardMoneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZRewardMoneyViewController.h; sourceTree = "<group>"; };
+		1B9502A61D61577E000D219D /* YBZRewardMoneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZRewardMoneyViewController.m; sourceTree = "<group>"; };
+		1B9502A71D61577E000D219D /* YBZDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZDetailViewController.h; sourceTree = "<group>"; };
+		1B9502A81D61577E000D219D /* YBZDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZDetailViewController.m; sourceTree = "<group>"; };
+		1B9502B11D615796000D219D /* YBZRewardHallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZRewardHallViewController.h; sourceTree = "<group>"; };
+		1B9502B21D615796000D219D /* YBZRewardHallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZRewardHallViewController.m; sourceTree = "<group>"; };
+		1B9502B31D615796000D219D /* YBZTranslatorDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZTranslatorDetailViewController.h; sourceTree = "<group>"; };
+		1B9502B41D615796000D219D /* YBZTranslatorDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZTranslatorDetailViewController.m; sourceTree = "<group>"; };
+		1B9502B51D615796000D219D /* YBZTranslatorAnswerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZTranslatorAnswerViewController.h; sourceTree = "<group>"; };
+		1B9502B61D615796000D219D /* YBZTranslatorAnswerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBZTranslatorAnswerViewController.m; sourceTree = "<group>"; };
+		1B9502BA1D6157D8000D219D /* BottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomView.h; sourceTree = "<group>"; };
+		1B9502BB1D6157D8000D219D /* BottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomView.m; sourceTree = "<group>"; };
+		1B9502BC1D6157D8000D219D /* TopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopView.h; sourceTree = "<group>"; };
+		1B9502BD1D6157D8000D219D /* TopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopView.m; sourceTree = "<group>"; };
+		1B9502C01D615C7F000D219D /* Infor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Infor.h; sourceTree = "<group>"; };
+		1B9502C11D615C7F000D219D /* Infor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Infor.m; sourceTree = "<group>"; };
+		1B9502C21D615C7F000D219D /* CellInfor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellInfor.h; sourceTree = "<group>"; };
+		1B9502C31D615C7F000D219D /* CellInfor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellInfor.m; sourceTree = "<group>"; };
+		1B9502C61D615C9F000D219D /* LanguageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanguageCell.h; sourceTree = "<group>"; };
+		1B9502C71D615C9F000D219D /* LanguageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanguageCell.m; sourceTree = "<group>"; };
+		1B9502C81D615C9F000D219D /* LanguageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LanguageCell.xib; sourceTree = "<group>"; };
+		1B9502CB1D615EA1000D219D /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		1B9502CC1D615EA1000D219D /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		1B9502CE1D615EB4000D219D /* Btn_TableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Btn_TableView.h; sourceTree = "<group>"; };
+		1B9502CF1D615EB4000D219D /* Btn_TableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Btn_TableView.m; sourceTree = "<group>"; };
+		1B9502D01D615EB4000D219D /* ExpandTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandTableVC.h; sourceTree = "<group>"; };
+		1B9502D11D615EB4000D219D /* ExpandTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandTableVC.m; sourceTree = "<group>"; };
+		1B9502D21D615EB4000D219D /* ExpandCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandCell.h; sourceTree = "<group>"; };
+		1B9502D31D615EB4000D219D /* ExpandCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandCell.m; sourceTree = "<group>"; };
 		1B96DA3F1D435ADC00FD5BA6 /* NSString+SZYKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SZYKit.m"; sourceTree = "<group>"; };
 		1B96DA401D435ADC00FD5BA6 /* NSString+SZYKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SZYKit.h"; sourceTree = "<group>"; };
 		1E7055061D517F3D00A000F5 /* YBZFreeTranslationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBZFreeTranslationInfo.h; sourceTree = "<group>"; };
@@ -521,6 +583,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A012EDCF1D509AEE00144BAD /* CoreGraphics.framework in Frameworks */,
+				A012EDD11D509AFC00144BAD /* Foundation.framework in Frameworks */,
+				A012EDD31D509B0400144BAD /* UIKit.framework in Frameworks */,
 				1E7056091D53250A00A000F5 /* AdSupport.framework in Frameworks */,
 				1E7056071D5324F400A000F5 /* Security.framework in Frameworks */,
 				1E7056051D5324C600A000F5 /* CoreFoundation.framework in Frameworks */,
@@ -533,9 +598,6 @@
 				1E7056001D53247700A000F5 /* jpush-ios-2.1.8.a in Frameworks */,
 				A012EDD71D509B1D00144BAD /* SystemConfiguration.framework in Frameworks */,
 				A012EDD51D509B1300144BAD /* QuartzCore.framework in Frameworks */,
-				A012EDD31D509B0400144BAD /* UIKit.framework in Frameworks */,
-				A012EDD11D509AFC00144BAD /* Foundation.framework in Frameworks */,
-				A012EDCF1D509AEE00144BAD /* CoreGraphics.framework in Frameworks */,
 				A012EDCD1D509AE300144BAD /* AssetsLibrary.framework in Frameworks */,
 				A012EDCB1D509AD900144BAD /* CFNetwork.framework in Frameworks */,
 				A012EDC91D509AB700144BAD /* CoreAudio.framework in Frameworks */,
@@ -641,6 +703,118 @@
 				1B7B67391D41C0A900346609 /* WebAgent.m */,
 			);
 			name = WebServer;
+			sourceTree = "<group>";
+		};
+		1B9502901D6156B9000D219D /* Reward */ = {
+			isa = PBXGroup;
+			children = (
+				1B9502921D6156EA000D219D /* TranslatorReward */,
+				1B9502911D6156D4000D219D /* UserReward */,
+			);
+			name = Reward;
+			sourceTree = "<group>";
+		};
+		1B9502911D6156D4000D219D /* UserReward */ = {
+			isa = PBXGroup;
+			children = (
+				1B9502981D61574E000D219D /* View */,
+				1B9502971D615744000D219D /* Model */,
+				1B9502961D615737000D219D /* Controller */,
+			);
+			name = UserReward;
+			sourceTree = "<group>";
+		};
+		1B9502921D6156EA000D219D /* TranslatorReward */ = {
+			isa = PBXGroup;
+			children = (
+				1B9502951D615724000D219D /* Model */,
+				1B9502941D61571C000D219D /* View */,
+				1B9502931D615710000D219D /* Controller */,
+			);
+			name = TranslatorReward;
+			sourceTree = "<group>";
+		};
+		1B9502931D615710000D219D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1B9502B11D615796000D219D /* YBZRewardHallViewController.h */,
+				1B9502B21D615796000D219D /* YBZRewardHallViewController.m */,
+				1B9502B31D615796000D219D /* YBZTranslatorDetailViewController.h */,
+				1B9502B41D615796000D219D /* YBZTranslatorDetailViewController.m */,
+				1B9502B51D615796000D219D /* YBZTranslatorAnswerViewController.h */,
+				1B9502B61D615796000D219D /* YBZTranslatorAnswerViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1B9502941D61571C000D219D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1B9502CE1D615EB4000D219D /* Btn_TableView.h */,
+				1B9502CF1D615EB4000D219D /* Btn_TableView.m */,
+				1B9502D01D615EB4000D219D /* ExpandTableVC.h */,
+				1B9502D11D615EB4000D219D /* ExpandTableVC.m */,
+				1B9502D21D615EB4000D219D /* ExpandCell.h */,
+				1B9502D31D615EB4000D219D /* ExpandCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1B9502951D615724000D219D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1B9502CB1D615EA1000D219D /* Model.h */,
+				1B9502CC1D615EA1000D219D /* Model.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1B9502961D615737000D219D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1B9502991D61577E000D219D /* YBZMyRewardViewController.h */,
+				1B95029A1D61577E000D219D /* YBZMyRewardViewController.m */,
+				1B95029B1D61577E000D219D /* YBZSendRewardViewController.h */,
+				1B95029C1D61577E000D219D /* YBZSendRewardViewController.m */,
+				1B95029D1D61577E000D219D /* SelectPhoto.h */,
+				1B95029E1D61577E000D219D /* SelectPhoto.m */,
+				1B95029F1D61577E000D219D /* YBZRewardChooseLanguageViewController.h */,
+				1B9502A01D61577E000D219D /* YBZRewardChooseLanguageViewController.m */,
+				1B9502A11D61577E000D219D /* YBZTagClassifyViewController.h */,
+				1B9502A21D61577E000D219D /* YBZTagClassifyViewController.m */,
+				1B9502A31D61577E000D219D /* YBZChoosePhotoViewController.h */,
+				1B9502A41D61577E000D219D /* YBZChoosePhotoViewController.m */,
+				1B9502A51D61577E000D219D /* YBZRewardMoneyViewController.h */,
+				1B9502A61D61577E000D219D /* YBZRewardMoneyViewController.m */,
+				1B9502A71D61577E000D219D /* YBZDetailViewController.h */,
+				1B9502A81D61577E000D219D /* YBZDetailViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		1B9502971D615744000D219D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1B9502C61D615C9F000D219D /* LanguageCell.h */,
+				1B9502C71D615C9F000D219D /* LanguageCell.m */,
+				1B9502C81D615C9F000D219D /* LanguageCell.xib */,
+				1B9502C01D615C7F000D219D /* Infor.h */,
+				1B9502C11D615C7F000D219D /* Infor.m */,
+				1B9502C21D615C7F000D219D /* CellInfor.h */,
+				1B9502C31D615C7F000D219D /* CellInfor.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1B9502981D61574E000D219D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1B9502BA1D6157D8000D219D /* BottomView.h */,
+				1B9502BB1D6157D8000D219D /* BottomView.m */,
+				1B9502BC1D6157D8000D219D /* TopView.h */,
+				1B9502BD1D6157D8000D219D /* TopView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		1E7055B41D53247700A000F5 /* JPush-iOS-SDK-2.1.8 */ = {
@@ -831,6 +1005,7 @@
 		A03ED0491D2DE20700BD9C0A = {
 			isa = PBXGroup;
 			children = (
+				1B9502901D6156B9000D219D /* Reward */,
 				1E7055B41D53247700A000F5 /* JPush-iOS-SDK-2.1.8 */,
 				A012EDE61D509C7600144BAD /* TransFree&Quick */,
 				A012EDB31D509A1C00144BAD /* Framework */,
@@ -1416,6 +1591,7 @@
 				A0532C961D38C6B400FC1AB1 /* CustomInfoCell.xib in Resources */,
 				A0532C771D38C32200FC1AB1 /* UserSetoutTableViewCell.xib in Resources */,
 				1ED863D11D3390F000529094 /* MJRefresh.bundle in Resources */,
+				1B9502CA1D615C9F000D219D /* LanguageCell.xib in Resources */,
 				A012EDAF1D5099E000144BAD /* release_notes_ios.txt in Resources */,
 				A03ED0601D2DE20800BD9C0A /* Main.storyboard in Resources */,
 			);
@@ -1442,7 +1618,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B9502AF1D61577E000D219D /* YBZRewardMoneyViewController.m in Sources */,
 				A0532C981D38C6B400FC1AB1 /* InformationModel.m in Sources */,
+				1B9502C41D615C7F000D219D /* Infor.m in Sources */,
 				1ED863D61D3390F000529094 /* UIScrollView+MJExtension.m in Sources */,
 				1ED863081D2F39DD00529094 /* AFViewShaker.m in Sources */,
 				A012EE071D509CAB00144BAD /* StringTransViewController.m in Sources */,
@@ -1488,26 +1666,35 @@
 				1B0513881D3F5DAC00F05C9D /* AFHTTPSessionManager.m in Sources */,
 				A012EE011D509CAB00144BAD /* BaseAudioButton.m in Sources */,
 				1ED863101D2F39DD00529094 /* NSArray+MASAdditions.m in Sources */,
+				1B9502B91D615796000D219D /* YBZTranslatorAnswerViewController.m in Sources */,
 				A0552ECE1D3A2C8C00E04D7A /* LocationViewController.m in Sources */,
+				1B9502BF1D6157D8000D219D /* TopView.m in Sources */,
 				A0532CC31D38D03E00FC1AB1 /* GTStarsScore.m in Sources */,
 				A0532C781D38C32200FC1AB1 /* UserSetTableViewCell.m in Sources */,
+				1B9502AD1D61577E000D219D /* YBZTagClassifyViewController.m in Sources */,
 				A012EDFF1D509CAB00144BAD /* RecordMethod.m in Sources */,
 				A012EE0A1D509CE700144BAD /* testViewController.m in Sources */,
+				1B9502B81D615796000D219D /* YBZTranslatorDetailViewController.m in Sources */,
 				A0532C871D38C3F600FC1AB1 /* AccountTableViewCell.m in Sources */,
 				A0552ECF1D3A2C8C00E04D7A /* LocCellFrameInfo.m in Sources */,
 				A0532CCC1D38D4FE00FC1AB1 /* UserTableViewCell.m in Sources */,
 				1B0513931D3F5DAC00F05C9D /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				1B9502AE1D61577E000D219D /* YBZChoosePhotoViewController.m in Sources */,
 				1ED8630F1D2F39DD00529094 /* MASViewConstraint.m in Sources */,
+				1B9502B01D61577E000D219D /* YBZDetailViewController.m in Sources */,
 				A03ED0DF1D2E2A9700BD9C0A /* YBZRegisterViewController.m in Sources */,
 				1B05138D1D3F5DAC00F05C9D /* AFURLSessionManager.m in Sources */,
 				A03ED0C51D2DF33A00BD9C0A /* YBZLoginViewController.m in Sources */,
 				1B610CE41D47590A00541B6B /* EmailViewController.m in Sources */,
+				1B9502AC1D61577E000D219D /* YBZRewardChooseLanguageViewController.m in Sources */,
 				A012EE051D509CAB00144BAD /* ChatFrameInfo.m in Sources */,
 				A03ED0F31D2E3EF500BD9C0A /* YBZProductListViewController.m in Sources */,
 				1ED863131D2F39DD00529094 /* ViewController+MASAdditions.m in Sources */,
 				A03ED0C21D2DF1BE00BD9C0A /* YBZInterpretViewController.m in Sources */,
+				1B9502BE1D6157D8000D219D /* BottomView.m in Sources */,
 				A0532CB91D38CF8E00FC1AB1 /* FeedBackViewController.m in Sources */,
 				1B0513961D3F5DAC00F05C9D /* UIProgressView+AFNetworking.m in Sources */,
+				1B9502D51D615EB4000D219D /* ExpandTableVC.m in Sources */,
 				A03ED0B61D2DE9D200BD9C0A /* YBZTranslationController.m in Sources */,
 				A03ED0B91D2DEA0C00BD9C0A /* YBZFreeTravelController.m in Sources */,
 				1ED863111D2F39DD00529094 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -1518,6 +1705,7 @@
 				A012EDFE1D509CAB00144BAD /* QuickTransViewController.m in Sources */,
 				A03ED0D21D2E089C00BD9C0A /* YBZUserOrderViewController.m in Sources */,
 				A04924291D55987100BE1DCF /* YBZChooseTranslatorViewController.m in Sources */,
+				1B9502D41D615EB4000D219D /* Btn_TableView.m in Sources */,
 				A03ED0CF1D2E088300BD9C0A /* YBZUserInfoViewController.m in Sources */,
 				1ED863D21D3390F000529094 /* MJRefreshBaseView.m in Sources */,
 				A012EE021D509CAB00144BAD /* BaseTableView.m in Sources */,
@@ -1543,7 +1731,10 @@
 				A0532C971D38C6B400FC1AB1 /* EditViewController.m in Sources */,
 				A03ED0571D2DE20800BD9C0A /* main.m in Sources */,
 				1ED8631F1D2F8DA500529094 /* YBZPopularFrameInfo.m in Sources */,
+				1B9502AA1D61577E000D219D /* YBZSendRewardViewController.m in Sources */,
 				1ED8636A1D3347F500529094 /* SYTableFooterView.m in Sources */,
+				1B9502D61D615EB4000D219D /* ExpandCell.m in Sources */,
+				1B9502B71D615796000D219D /* YBZRewardHallViewController.m in Sources */,
 				1B0513911D3F5DAC00F05C9D /* AFImageDownloader.m in Sources */,
 				1B96DA411D435ADC00FD5BA6 /* NSString+SZYKit.m in Sources */,
 				1ED8630E1D2F39DD00529094 /* MASViewAttribute.m in Sources */,
@@ -1551,8 +1742,12 @@
 				1ED863D71D3390F000529094 /* UIScrollView+MJRefresh.m in Sources */,
 				A0532CA51D38C9EB00FC1AB1 /* HelpViewController.m in Sources */,
 				1B05138A1D3F5DAC00F05C9D /* AFSecurityPolicy.m in Sources */,
+				1B9502AB1D61577E000D219D /* SelectPhoto.m in Sources */,
 				A0532C841D38C3F600FC1AB1 /* AccountAndSafeOtherTableViewCell.m in Sources */,
 				1ED863EE1D3887E200529094 /* UITextField+Validator.m in Sources */,
+				1B9502CD1D615EA1000D219D /* Model.m in Sources */,
+				1B9502A91D61577E000D219D /* YBZMyRewardViewController.m in Sources */,
+				1B9502C51D615C7F000D219D /* CellInfor.m in Sources */,
 				A03ED0E51D2E2B2300BD9C0A /* YBZTranslaterSelectLanguageViewController.m in Sources */,
 				A03ED0E21D2E2AA400BD9C0A /* YBZFindKeyViewController.m in Sources */,
 				1B0513971D3F5DAC00F05C9D /* UIRefreshControl+AFNetworking.m in Sources */,
@@ -1560,6 +1755,7 @@
 				A049242D1D55A4A900BE1DCF /* YBZWaitViewController.m in Sources */,
 				1B7B67341D41BFBE00346609 /* APIClient.m in Sources */,
 				A012EDFD1D509CAB00144BAD /* FreeTransViewController.m in Sources */,
+				1B9502C91D615C9F000D219D /* LanguageCell.m in Sources */,
 				A0552ED71D3A2C8C00E04D7A /* SelectedMessageInfoCell.m in Sources */,
 				1ED8636C1D3347F500529094 /* SYTableHeaderView.m in Sources */,
 			);
@@ -1759,6 +1955,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = YBZTravelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tjufe.YBZTravelTests;
@@ -1771,6 +1968,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = YBZTravelTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tjufe.YBZTravelTests;

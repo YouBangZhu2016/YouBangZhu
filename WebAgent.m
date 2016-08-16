@@ -391,6 +391,50 @@ feedbackinfo_time:(NSString *)feedbackinfo_time
     }];
     
 }
+//********************************************************************//
+//悬赏金额
++(void)sendRewardRewardID:(NSString *)rewardID
+              rewardTitle:(NSString *)rewardTitle
+               rewardText:(NSString *)rewardText
+                rewardUrl:(NSString *)rewardUrl
+              rewardMoney:(NSString *)rewardMoney
+                  success:(void (^)(id responseObject))success
+                  failure:(void (^)(NSError *error))failure
+
+{
+    NSDictionary *dict = @{@"user_id":rewardID,
+                           @"reward_title":rewardTitle,
+                           @"reward_text":rewardText,
+                           @"reward_url":rewardUrl,
+                           @"reward_money":rewardMoney};
+    
+    [[APIClient sharedClient] POST:@"Reward/reward_info_add_operation/" parameters:dict success:^(NSURLSessionDataTask *task, id responseObject) {
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        failure(error);
+    }];
+
+}
+//获取热门标签
++(void)getLabelInfo:(NSString *)labelId
+            success:(void (^)(id responseObject))success
+            failure:(void (^)(NSError *error))failure
+{
+    NSDictionary *dict = @{@"label_id":labelId};
+    
+    [[APIClient sharedClient] POST:@"Reward/getLabel_info/" parameters:dict success:^(NSURLSessionDataTask *task, id responseObject) {
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        failure(error);
+    }];
+}
+
+
+
+
+
+
+
 
 
 

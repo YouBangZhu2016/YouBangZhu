@@ -17,6 +17,9 @@
 #import "WebAgent.h"
 #import "MJRefresh.h"
 #import "QuickTransViewController.h"
+#import "YBZRewardHallViewController.h"
+#import "YBZSendRewardViewController.h"
+#import "YBZMyRewardViewController.h"
 
 #define kImageCount 5
 //#define MJRandomData [NSString stringWithFormat:@"随机数据---%d", arc4random_uniform(1000000)]
@@ -565,7 +568,10 @@
     }
     
 }
-
+-(void)myOfferBtnClick{
+    YBZRewardHallViewController *rewardVC = [[YBZRewardHallViewController alloc]init];
+    [self.navigationController pushViewController:rewardVC animated:nil];
+}
 
 - (void)pageChanged:(UIPageControl *)page
 {
@@ -574,6 +580,10 @@
     [self.scrollView setContentOffset:CGPointMake(x, 0) animated:YES];
 }
 
+-(void)customMadeBtnClick{
+    YBZMyRewardViewController *myRewardVC = [[YBZMyRewardViewController alloc]init];
+    [self.navigationController pushViewController:myRewardVC animated:YES];
+}
 
 
 
@@ -714,7 +724,7 @@
         //_customMadeBtn.backgroundColor = [UIColor purpleColor];
         //_interpretBtn.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 100, CGRectGetMaxY(self.translaterBtn.frame) + 20, 100, 50);
         _customMadeBtn.frame = CGRectMake(CGRectGetMidX(self.interpretBtn.frame) + UITranslationBtnSize / 2 + UITranslationBtnMargin, CGRectGetMaxY(self.userBtn.frame) + 20, UITranslationBtnSize, UITranslationBtnSize);
-        [_customMadeBtn addTarget:self action:@selector(intoChangeLanguageClick) forControlEvents:UIControlEventTouchUpInside];
+        [_customMadeBtn addTarget:self action:@selector(customMadeBtnClick) forControlEvents:UIControlEventTouchUpInside];
         _customMadeBtn.layer.masksToBounds = YES;
         _customMadeBtn.layer.cornerRadius = UITranslationBtnSize / 2;
         
@@ -747,13 +757,12 @@
         //_myOfferBtn.backgroundColor = [UIColor purpleColor];
         //_interpretBtn.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 100, CGRectGetMaxY(self.translaterBtn.frame) + 20, 100, 50);
         _myOfferBtn.frame = CGRectMake(CGRectGetMaxX(self.customMadeBtn.frame) + UITranslationBtnMargin, CGRectGetMaxY(self.userBtn.frame) + 20, UITranslationBtnSize, UITranslationBtnSize);
-        [_myOfferBtn addTarget:self action:@selector(intoChangeLanguageClick) forControlEvents:UIControlEventTouchUpInside];
+        [_myOfferBtn addTarget:self action:@selector(myOfferBtnClick) forControlEvents:UIControlEventTouchUpInside];
         _myOfferBtn.layer.cornerRadius = UITranslationBtnSize / 2;
         
     }
     return _myOfferBtn;
 }
-
 - (UILabel *)myOfferLabel{
     
     if (!_myOfferLabel) {

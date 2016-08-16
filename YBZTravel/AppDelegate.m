@@ -12,6 +12,7 @@
 #import <RongIMLib/RongIMLib.h>
 #import "FreeTransViewController.h"
 #import "JPUSHService.h"
+#import "YBZTranslatorAnswerViewController.h"
 #import "WebAgent.h"
 
 #define Trans_YingYu    @"en"
